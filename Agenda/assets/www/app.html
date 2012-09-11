@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>
+        </title>
+        <link rel="stylesheet" href="jquery/jquery.mobile-1.1.1.min.css" />
+        <link rel="stylesheet" href="my.css" />
+        <style>
+            /* App custom styles */
+        </style>
+        <script type="text/javascript" charset="utf-8" src="cordova-2.0.0.js"></script>
+        <script src="js/jquery-1.8.1.min.js">
+        </script>
+        <script src="jquery/jquery.mobile-1.1.1.min.js">
+        </script>
+        <script src="my.js">
+        
+        </script>
+    </head>
+    <body>
+
+        <div data-role="page">
+
+            <div data-role="header">
+                <h1>
+                    Agenda
+                </h1>
+                <a id="botao-adicionar" data-role="button" data-transition="fade" href="#page1" class="ui-btn-right">
+                    Adicionar
+                </a>
+            </div><!-- /header -->
+
+            <div data-role="content">	
+                <ul data-role="listview" data-divider-theme="b" data-inset="true">
+                    <li data-role="list-divider" role="heading">
+                        Contatos
+                    </li>
+                </ul>
+                <ul id="contatos" data-role="listview" data-inset="true" data-filter="true">
+                    <li><a href="#">Acura</a></li>
+                    <li><a href="#">Audi</a></li>
+                    <li><a href="#">BMW</a></li>
+                    <li><a href="#">Cadillac</a></li>
+                    <li><a href="#">Ferrari</a></li>
+                </ul>	
+            </div><!-- /content -->
+
+            <div data-role="footer">
+                <h4>Grupo 2</h4>
+            </div><!-- /footer -->
+        </div><!-- /page -->
+
+        <script>
+            $(function() {
+                $('a#botao-adicionar').click(function(){
+                    $("ul#contatos").append("<li data-theme='c'><a href='#page1' data-transition='slide'>Noob!</a></li>");
+                    $('ul#contatos').listview('refresh');
+                });
+            });
+        </script>
+    </body>
+
+
+</html>
