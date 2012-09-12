@@ -4,17 +4,15 @@ $( document ).bind( "mobileinit", function() {
     $.mobile.allowCrossDomainPages = true;
 });
 
-var webserviceUrl = "http://127.0.0.1:8080/AgendaTelefonica-JSP/PhonebookService";
-
-$(function() {
-    $('a#botao-adicionar').click(function(){
-        $("ul#contatos").append("<li data-theme='c'><a href='#page1' data-transition='slide'>Noob!</a></li>");
-        $('ul#contatos').listview('refresh');
-                    
-        console.log($('script#soap-template-list').html());
+function WebService(webserviceUrl){
+    
+    this.webserviceUrl = webserviceUrl;
+    
+    this.list = function(){
+        //console.log($('script#soap-template-list').html());
         $.ajax({
             type: "post",
-            url: webserviceUrl,
+            url: this.webserviceUrl,
             contentType: "text/xml",
             data: $('script#soap-template-list').html(),
             dataType: "xml",
@@ -26,7 +24,16 @@ $(function() {
                 console.log('erro');
             }
         });
+    }
+}
+
+$(function() {
+    $('a#botao-adicionar').click(function(){
+        $("ul#contatos").append("<li data-theme='c'><a href='#page1' data-transition='slide'>Noob!</a></li>");
+        $('ul#contatos').listview('refresh');
                     
+        webservice = new WebService("http://127.0.0.1:8080/AgendaTelefonica-JSP/PhonebookService");
+        webservice.list();
                     
     });
 });
