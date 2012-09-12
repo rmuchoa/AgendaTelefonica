@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.service;
 
 import com.model.Contact;
@@ -19,16 +15,16 @@ import javax.jws.WebService;
 public class PhonebookService {
 
     private Phonebook phonebook = new Phonebook();
-    
+
     /**
      * This is a sample web service operation
      */
     @WebMethod(operationName = "insert")
     public String insert(@WebParam(name = "contact") Contact contact) {
-    
+
         phonebook.add(contact);
         return contact.getName() + " inserted";
-    
+
     }
 
     /**
@@ -36,10 +32,10 @@ public class PhonebookService {
      */
     @WebMethod(operationName = "update")
     public String update(@WebParam(name = "contact") Contact contact) {
-    
+
         phonebook.update(contact);
         return contact.getName() + " updated";
-    
+
     }
 
     /**
@@ -47,10 +43,10 @@ public class PhonebookService {
      */
     @WebMethod(operationName = "remove")
     public String remove(@WebParam(name = "contact") Contact contact) {
-    
+
         phonebook.remove(contact);
         return contact.getName() + " removed";
-    
+
     }
 
     /**
@@ -58,9 +54,9 @@ public class PhonebookService {
      */
     @WebMethod(operationName = "list")
     public ArrayList<Contact> list() {
-    
+
         return phonebook.list();
-    
+
     }
 
 }
