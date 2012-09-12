@@ -17,8 +17,12 @@
         <script src="jquery/jquery.mobile-1.1.1.min.js">
         </script>
         <script src="my.js">
-        
         </script>
+        <script id="soap-template-adicionar" type="application/soap-template">
+        </script>
+        <script id="soap-template-get-contatos" type="application/soap-template">
+        </script>
+        <script type="text/javascript" charset="utf-8" src="js/script.js"></script>
     </head>
     <body>
 
@@ -54,12 +58,6 @@
         </div><!-- /page -->
 
         <script>
-            $(function() {
-                $('a#botao-adicionar').click(function(){
-                    $("ul#contatos").append("<li data-theme='c'><a href='#page1' data-transition='slide'>Noob!</a></li>");
-                    $('ul#contatos').listview('refresh');
-                });
-            });
         </script>
     </body>
 
