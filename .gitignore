@@ -2,6 +2,11 @@
 /*.bbl
 /*.blg
 /*.log
-/*.pdf
+/sigproc-sp.pdf
 /*.dvi
 /*.gz
+/*.dvi
+/*.ps
+/sigproc-sp.tex.REMOTE.tex
+/sigproc-sp.tex.BASE.tex
+/sigproc-sp.tex.LOCAL.tex
