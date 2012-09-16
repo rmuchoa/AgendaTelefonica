@@ -19,6 +19,14 @@ public class Contact implements Serializable {
     public Contact() {
         
     }
+    
+    public Contact(Integer id, String name, String  phone) {
+    
+        this.setId(id);
+        this.setName(name);
+        this.setPhone(phone);
+    
+    }
 
     public int getId() {
     
