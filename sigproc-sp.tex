@@ -47,7 +47,7 @@
 		   \affaddr{Av Tiarajú, 810}\\
 		   \affaddr{Alegrete - RS}\\
 		   \email{helisonreus@gmail.com}
-	\alignauthor 
+%	\alignauthor 
 }
 
 
@@ -99,15 +99,25 @@
 	\subsection{Implementação}
 
 \section{XML}
-		XML (Extensible Markup Languages), é uma linguagem de marcação extensa, projetada para transportar, armazenar e processar dados. O XML representa um conjunto de especificações especificadas e relatadas pelo W3C e outros.
-
+		XML (Extensible Markup Languages), é uma linguagem de marcação extensa, projetada para transportar, armazenar e processar dados. O XML representa um conjunto de especificações especificadas e relatadas pelo W3C e outros. O XML possui um ancestral em comum com o SGML (Standard Generalized Markup Language). Uma das caracteristicas do GSGML era a separação do formato do conteudo. Se um documento foi produzido para o formato A4 ou carta, por exemplo, o formato era descrito independentemente do conteudo do documento. O mesmo documento portanto pode ser enviado em vários formatos sem mudar seu conteúdo. O pricipio das linguagens de marcação são aplicadas para os Web Services através da separação da instancia do documento, que contém os dados, e o esquema, que descreve a estrutura dos dados e os tipos, incluindo informações de semântica muito úteis para fazer o mapeamento do documento para várias linguagens de programação e sistemas de software. 
+		
+		O XML é similar ao HTML, contém elementos, atributos e valores. Bem feitos os documentos em XML podem ser exibidos em navegadores web, porém, esse aspecto do XML não é muito relevante para os Web services. O HTML contém um conjunto finito de elementos e atributos, porém o XML permite ser definido tantos conjuntos quanto necessários.
+		
+		Os elementos e atributos de um arquivo XML definem independentemente seus tipos e estruturas de informação para o tipo de dado que eles contém, incluindo a capacidade de modelar dados e estruturas especificas à um dominio de software. (Um dominio de software pode ser uma linguagem de programação, um middleware, um pacote de aplicações, ou um sistema de gerenciamento de dados.) A transformação de uma representação genérica de dados contida em um XML em um aplicativo, ou um dominio de software, a representação específica de dados é o aspecto principal dos Web serices.
+		
 		Os Web Services utilizam esquemas em XML para a validação de mensagens. O SOAP do computador que esta enviando a mensagem transforma seus dados da forma nativa para o esquema XML pré-definido contido no arquivo WDSL para texto, pontos flutuantes, e outros, usando o mapeamento das tabelas. O Mapeamento das tabelas associa tipos de dados nativos com os tipos de dados correspondentes no XML. Padrões de mapeamento estão disponíveis para Java, Visual Basic, CORBA, e outros tipos mais comuns de tipos de sistema. Muitas ferramentas XML estao disponíveis para definir mapeamentos customizados ou especiais. O computador que recebe o processo SOAP executa a transformação reversa, mapeando os tipos de dados do XML para os seus tipos de dados correspondentes.\cite{UNDERWEBSERVICES}
+		
+		A sintaxe usada nas tecnologias de Web services especifica como os dados são genericamente representados, define como e com quais qualidades de serviço os dados são transmitidos, e detalha como o serviço é enviado e recebido. As implementações de Web service decodificam esses vários bits de XML para interagir com várias aplicações e dominios de software por baixo do serviço.
+		
+		\subsection{Exemplo}
+		
+		Para utilizar Web services, os dados podem ser criados no XML ou convertidos para o formato XML através de um ou mais formatos nativos existentes, como o ASCII ou o tipo de sistema utilizado pelo JAVA. Para um exemplo simples, imagine que...  
  
 \section{SOAP}
 	\subsection{O que é?}
 	
 		Simple Object Access Protocol ou procotolo simples de acesso a objetos, conhecido como SOAP, é um protocolo de webservices que utiliza o formato XML para troca de mensagens. O padrão do protocolo SOAP é reconhecido pela W3C desde 2003 em sua versão 1.2. Inicialmente tendo a empresa de tecnologia Microsoft como seu maior apoiador, no entanto é governado pela W3C atualmente.
-	
+		
 		O SOAP é orientado a métodos, estes métodos podem ter ou não parametros, portanto é necessário o conhecimento da assinatura dos métodos. A execução dos métodos é realizada no servidor.
 		
 		Existem duas versão do SOAP: 1.1 e 1.2. Dentre as diferenças, pode-se mencionar que a versão 1.1 suporta apenas o HTTP com transporte de mensagens, enquanto a versão 1.2 permite a utilização de outros protocolos de transporte além do HTTP. \cite{WEBSERVICESZEND}
