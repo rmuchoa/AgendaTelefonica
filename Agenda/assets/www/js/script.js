@@ -79,7 +79,30 @@ function WebService(webserviceUrl){
     }
 }
 
+function Dialog(){
+    
+    this.message = '';
+    this.title = '';
+    this.nextPage = '';
+    
+    this.changeData= function(title, message, nextPage){
+        this.title = title;
+        this.message = message;
+        this.nextPage = nextPage;
+    },
+    
+    this.show = function(){
+        $('div#dialog-box h3').html(this.title);
+        $('div#dialog-box p').html(this.message);
+        $('div#dialog-box a').attr('href', this.nextPage);
+        $.mobile.changePage("#dialog-box");
+    },
+    this.hide = function(){
+        
+    }
+}
 
+var dialog = new Dialog();
 //var webservice = new WebService("http://localhost/AgendaTelefonicaPHPSOAP/public/webservice.php");
 url = prompt("URL do Web service", "http://127.0.0.1:8080/PhonebookService/PhonebookService")
 var webservice = new WebService(url);
@@ -89,6 +112,13 @@ $(function() {
     $('a#botao-adicionar').click(function(){
 
         });
+        
+    $('button#botao-salvar-contato').click(function(e){
+        e.preventDefault();
+        console.log('clicked save');
+        dialog.changeData("Sucesso!", "O contato foi salvo com sucesso!",'#paginaPrincipal');
+        dialog.show();
+    });
 });
 
 
