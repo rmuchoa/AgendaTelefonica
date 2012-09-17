@@ -19,30 +19,37 @@
         <script src="js/my.js">
         </script>
         <script id="soap-template-add" type="application/soap-template">
-        </script>
-        <script id="soap-template-list" type="application/soap-template">
-            <S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
-                <S:Header/>
-                <S:Body>
-                    <ns2:list xmlns:ns2="http://service.com/"/>
-                </S:Body>
-            </S:Envelope>
-        </script>
+        <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://service.com/">
+            <soapenv:Header/>
+            <soapenv:Body>
+                <ser:insert>
+                    <contact>${name}</contact>
+                    <phone>${phone}</phone>
+                </ser:insert>
+            </soapenv:Body>
+        </soapenv:Envelope>
+    </script>
+    <script id="soap-template-list" type="application/soap-template">
+        <soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://localhost/AgendaTelefonicaPHPSOAP/public/webservice.php">
+            <soapenv:Header/>
+            <soapenv:Body>
+                <web:contatos soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </soapenv:Body>
+        </soapenv:Envelope>
+    </script>
     <script type="text/javascript" charset="utf-8" src="js/script.js"></script>
 </head>
 <body>
 
-    <div data-role="page">
-
+    <div data-role="page" id="paginaPrincipal" data-title="Agenda">
         <div data-role="header">
             <h1>
                 Agenda
             </h1>
-            <a id="botao-adicionar" data-role="button" data-transition="fade" href="#page1" class="ui-btn-right">
+            <a id="botao-adicionar" data-theme="d" data-role="button" data-icon="plus" data-transition="fade" href="#paginaAdicionar" class="ui-btn-right">
                 Adicionar
             </a>
         </div><!-- /header -->
-
         <div data-role="content">	
             <ul data-role="listview" data-divider-theme="b" data-inset="true">
                 <li data-role="list-divider" role="heading">
@@ -50,22 +57,73 @@
                 </li>
             </ul>
             <ul id="contatos" data-role="listview" data-inset="true" data-filter="true">
-                <li><a href="#">Acura</a></li>
-                <li><a href="#">Audi</a></li>
-                <li><a href="#">BMW</a></li>
-                <li><a href="#">Cadillac</a></li>
-                <li><a href="#">Ferrari</a></li>
+                <li><a href="#paginaDetalhesContato">Acura</a></li>
+                <li><a href="#paginaDetalhesContato">Audi</a></li>
+                <li><a href="#paginaDetalhesContato">BMW</a></li>
+                <li><a href="#paginaDetalhesContato">Cadillac</a></li>
+                <li><a href="#paginaDetalhesContato">Ferrari</a></li>
             </ul>	
         </div><!-- /content -->
-
         <div data-role="footer">
-            <h4>Grupo 2</h4>
+            <h4>Web Services - SOAP - Grupo 2</h4>
         </div><!-- /footer -->
     </div><!-- /page -->
 
-    <script>
-    </script>
+    <!-- Start of second page -->
+    <div data-role="page" id="paginaAdicionar" data-title="Adicionar Contato">
+        <div data-role="header">
+            <h1>Adicionar Contato</h1>
+            <a data-role="button" data-theme="d" data-icon="back" data-transition="fade" href="#paginaPrincipal" class="ui-btn-right">
+                Voltar
+            </a>
+        </div><!-- /header -->
+        <div data-role="content">	
+            <div>
+                <form action="#paginaPrincipal" method="post"> 
+                    <div data-role="fieldcontain">
+                        <label for="nome">Nome: </label>
+                        <input type="text" name="nome" id="nome" data-mini="true" placeholder="Nome"/>
+                    </div>
+                    <div data-role="fieldcontain">
+                        <label for="telefone">Telefone: </label>
+                        <input type="tel" name="telefone" id="telefone" data-mini="true" placeholder="Telefone"/>
+                    </div>
+                    <div class="ui-body ui-body-b">
+                        <fieldset class="ui-grid-a">
+                            <div class="ui-block-a"><button type="submit" data-theme="a">Salvar</button></div>
+                            <div class="ui-block-b"><button data-theme="d" data-rel="back">Cancelar</button></div>
+                        </fieldset>
+                    </div>
+                </form>
+            </div>
+        </div><!-- /content -->
+        <div data-role="footer">
+            <h4>Web Services - SOAP - Grupo 2</h4>
+        </div><!-- /footer -->
+    </div><!-- /page -->
+
+    <!-- Pagina contato -->
+    <div data-role="page" id="paginaDetalhesContato" data-title="Detalhes do Contato">
+        <div data-role="header">
+            <h1>Detalhes do Contato</h1>
+            <a data-role="button" data-theme="d" data-icon="back" data-transition="fade" href="#paginaPrincipal" class="ui-btn-right">
+                Voltar
+            </a>
+        </div><!-- /header -->
+        <div data-role="content">	
+            <div data-role="collapsible" data-content-theme="c" data-collapsed="false">
+                <h3>Rafael</h3>
+                <p>Telefone: (55) 8157-9997</p>
+                <div data-role="controlgroup" data-type="horizontal">
+                    <a href="#paginaPrincipal" data-role="button" data-icon="back">Voltar</a>
+                    <a href="#paginaPrincipal" data-role="button" data-icon="delete">Excluir</a>
+                </div>
+            </div>
+        </div><!-- /content -->
+        <div data-role="footer">
+            <h4>Web Services - SOAP - Grupo 2</h4>
+        </div><!-- /footer -->
+    </div><!-- /page -->
+
 </body>
-
-
 </html>
