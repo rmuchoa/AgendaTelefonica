@@ -72,6 +72,24 @@
 		
 		
 		
+\section{XML}
+		XML (Extensible Markup Languages), é uma linguagem de marcação extensa, projetada para transportar, armazenar e processar dados. O XML representa um conjunto de especificações especificadas e relatadas pelo W3C e outros. O XML possui um ancestral em comum com o SGML (Standard Generalized Markup Language). Uma das caracteristicas do GSGML era a separação do formato do conteudo. Se um documento foi produzido para o formato A4 ou carta, por exemplo, o formato era descrito independentemente do conteudo do documento. O mesmo documento portanto pode ser enviado em vários formatos sem mudar seu conteúdo. O pricipio das linguagens de marcação são aplicadas para os Web Services através da separação da instancia do documento, que contém os dados, e o esquema, que descreve a estrutura dos dados e os tipos, incluindo informações de semântica muito úteis para fazer o mapeamento do documento para várias linguagens de programação e sistemas de software. 
+		
+		O XML é similar ao HTML, contém elementos, atributos e valores. Bem feitos os documentos em XML podem ser exibidos em navegadores web, porém, esse aspecto do XML não é muito relevante para os Web services. O HTML contém um conjunto finito de elementos e atributos, porém o XML permite ser definido tantos conjuntos quanto necessários.
+		
+		Os elementos e atributos de um arquivo XML definem independentemente seus tipos e estruturas de informação para o tipo de dado que eles contém, incluindo a capacidade de modelar dados e estruturas especificas à um dominio de software. (Um dominio de software pode ser uma linguagem de programação, um middleware, um pacote de aplicações, ou um sistema de gerenciamento de dados.) A transformação de uma representação genérica de dados contida em um XML em um aplicativo, ou um dominio de software, a representação específica de dados é o aspecto principal dos Web serices.
+		
+		Os Web Services utilizam esquemas em XML para a validação de mensagens. O SOAP do computador que esta enviando a mensagem transforma seus dados da forma nativa para o esquema XML pré-definido contido no arquivo WDSL para texto, pontos flutuantes, e outros, usando o mapeamento das tabelas. O Mapeamento das tabelas associa tipos de dados nativos com os tipos de dados correspondentes no XML. Padrões de mapeamento estão disponíveis para Java, Visual Basic, CORBA, e outros tipos mais comuns de tipos de sistema. Muitas ferramentas XML estao disponíveis para definir mapeamentos customizados ou especiais. O computador que recebe o processo SOAP executa a transformação reversa, mapeando os tipos de dados do XML para os seus tipos de dados correspondentes.\cite{UNDERWEBSERVICES}
+		
+		A sintaxe usada nas tecnologias de Web services especifica como os dados são genericamente representados, define como e com quais qualidades de serviço os dados são transmitidos, e detalha como o serviço é enviado e recebido. As implementações de Web service decodificam esses vários bits de XML para interagir com várias aplicações e dominios de software por baixo do serviço.
+		
+\section{HTTP}
+%TRADUÇÃO BIZARRA
+		O Hypertext Transfer Protocol (HTTP) é um protocolo de nível de aplicação para distribuição, colaboração, sistemas de informação multimida. Ele é
+		um protocoloco genérico, e sem proprietário, ele pode ser usado para muitos objetivos além do uso para hipertexto, como nomenclatura de servidores
+		e gerenciamento de objetos de sistemas distribuidos, através da extensão de seus métodos de requisição, códigos de erros e cabeçalhos. Uma
+		característica do HTTP é a escrita e negociação da representação de dados, habilitando os sistemas a construir independentemente os dados a serem
+		transferidos.\cite{HTTP-1.1}
 
 \section{Webservices}
 		Web Services oferecem uma camada de abstração acima dos sistemas existentes, assim como Servidores de Aplicação, 
@@ -94,23 +112,9 @@
 	
 	\subsection{Funcionamento}
 	
-	\subsection{Implementação}
 
-\section{XML}
-		XML (Extensible Markup Languages), é uma linguagem de marcação extensa, projetada para transportar, armazenar e processar dados. O XML representa um conjunto de especificações especificadas e relatadas pelo W3C e outros. O XML possui um ancestral em comum com o SGML (Standard Generalized Markup Language). Uma das caracteristicas do GSGML era a separação do formato do conteudo. Se um documento foi produzido para o formato A4 ou carta, por exemplo, o formato era descrito independentemente do conteudo do documento. O mesmo documento portanto pode ser enviado em vários formatos sem mudar seu conteúdo. O pricipio das linguagens de marcação são aplicadas para os Web Services através da separação da instancia do documento, que contém os dados, e o esquema, que descreve a estrutura dos dados e os tipos, incluindo informações de semântica muito úteis para fazer o mapeamento do documento para várias linguagens de programação e sistemas de software. 
+
 		
-		O XML é similar ao HTML, contém elementos, atributos e valores. Bem feitos os documentos em XML podem ser exibidos em navegadores web, porém, esse aspecto do XML não é muito relevante para os Web services. O HTML contém um conjunto finito de elementos e atributos, porém o XML permite ser definido tantos conjuntos quanto necessários.
-		
-		Os elementos e atributos de um arquivo XML definem independentemente seus tipos e estruturas de informação para o tipo de dado que eles contém, incluindo a capacidade de modelar dados e estruturas especificas à um dominio de software. (Um dominio de software pode ser uma linguagem de programação, um middleware, um pacote de aplicações, ou um sistema de gerenciamento de dados.) A transformação de uma representação genérica de dados contida em um XML em um aplicativo, ou um dominio de software, a representação específica de dados é o aspecto principal dos Web serices.
-		
-		Os Web Services utilizam esquemas em XML para a validação de mensagens. O SOAP do computador que esta enviando a mensagem transforma seus dados da forma nativa para o esquema XML pré-definido contido no arquivo WDSL para texto, pontos flutuantes, e outros, usando o mapeamento das tabelas. O Mapeamento das tabelas associa tipos de dados nativos com os tipos de dados correspondentes no XML. Padrões de mapeamento estão disponíveis para Java, Visual Basic, CORBA, e outros tipos mais comuns de tipos de sistema. Muitas ferramentas XML estao disponíveis para definir mapeamentos customizados ou especiais. O computador que recebe o processo SOAP executa a transformação reversa, mapeando os tipos de dados do XML para os seus tipos de dados correspondentes.\cite{UNDERWEBSERVICES}
-		
-		A sintaxe usada nas tecnologias de Web services especifica como os dados são genericamente representados, define como e com quais qualidades de serviço os dados são transmitidos, e detalha como o serviço é enviado e recebido. As implementações de Web service decodificam esses vários bits de XML para interagir com várias aplicações e dominios de software por baixo do serviço.
-		
-		\subsection{Exemplo}
-		
-		Para utilizar Web services, os dados podem ser criados no XML ou convertidos para o formato XML através de um ou mais formatos nativos existentes, como o ASCII ou o tipo de sistema utilizado pelo JAVA. Para um exemplo simples, imagine que...  
- 
 \section{SOAP}
 	\subsection{O que é?}
 	
@@ -123,7 +127,8 @@
 	\subsection{Funcionamento}
 	
 		Para descrever um webservice é utilizado vocabulário em XML chamado Web Service Services Description Language conhecido como WSDL, que define como o webservice é acessado, quais as operações existem, como as mensagens são transferidas e a estrutura das mensagens. O WDSL não é obrigatório para trabalhar com webservices, ele faz uma parte integral do perfil do básico WS-I da organização \emph{OASIS Web Services Interoperability} \footnote{A Web Services Interoperability Organization (WS-I) é uma organização aberta com objetivo de estabelecer as melhores práticas para a interoperabilidade de web services, para grupos selecionados de padrões de web services, através de plataformas, sistemas operacionais e linguagens de programação.\cite{OASIS-WS-I-SITE}} e facilita o trabalho. 
- 
+\section{Implementação}
+%Falar sobre a implementação do sistema, no caso falar como o Web services foi criado e afins 
 
 \section{Conclusão}
 This paragraph will end the body of this sample document.
