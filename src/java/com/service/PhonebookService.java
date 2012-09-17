@@ -25,13 +25,13 @@ public class PhonebookService {
      * This is a sample web service operation
      */
     @WebMethod(operationName = "insert")
-    public String insert(@WebParam(name = "contact") String contact, 
-                            @WebParam(name = "phone") String phone) {
+    public String insert(@WebParam(name = "contact") String contact,
+            @WebParam(name = "phone") String phone) {
 
-        if (phonebook.add(contact, phone))
-        
+        if (phonebook.add(contact, phone)) {
             return contact + " inserted";
-        
+        }
+
         return "fail on insert " + contact;
 
     }
@@ -40,14 +40,14 @@ public class PhonebookService {
      * Operação de serviço web
      */
     @WebMethod(operationName = "update")
-    public String update(@WebParam(name = "id") Integer id, 
-                            @WebParam(name = "contact") String contact, 
-                            @WebParam(name = "phone") String phone) {
+    public String update(@WebParam(name = "id") Integer id,
+            @WebParam(name = "contact") String contact,
+            @WebParam(name = "phone") String phone) {
 
-        if (phonebook.update(id, contact, phone))
-        
+        if (phonebook.update(id, contact, phone)) {
             return contact + " updated";
-        
+        }
+
         return "fail on update " + contact;
 
     }
@@ -56,14 +56,14 @@ public class PhonebookService {
      * Operação de serviço web
      */
     @WebMethod(operationName = "remove")
-    public String remove(@WebParam(name = "id") Integer id, 
-                            @WebParam(name = "contact") String contact, 
-                            @WebParam(name = "phone") String phone) {
+    public String remove(@WebParam(name = "id") Integer id,
+            @WebParam(name = "contact") String contact,
+            @WebParam(name = "phone") String phone) {
 
-        if (phonebook.remove(id, contact, phone))
-        
+        if (phonebook.remove(id, contact, phone)) {
             return contact + " removed";
-        
+        }
+
         return "fail on remove " + contact;
 
     }
@@ -77,5 +77,4 @@ public class PhonebookService {
         return phonebook.list();
 
     }
-
 }

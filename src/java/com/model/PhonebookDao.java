@@ -32,7 +32,7 @@ public class PhonebookDao {
     
         Contact contact = new Contact(id, name, phone);
         
-        for (int i=0; i<contacts.size(); i++)
+        for (int i=0; i<contacts.size(); i++) {
         
             if (contact.getId() == contacts.get(i).getId()) {
             
@@ -40,6 +40,7 @@ public class PhonebookDao {
                 return true;
             
             }
+        }
         
         return false;
     
@@ -49,7 +50,7 @@ public class PhonebookDao {
     
         Contact contact = new Contact(id, name, phone);
         
-        for (int i=0; i<contacts.size(); i++)
+        for (int i=0; i<contacts.size(); i++) {
         
             if (contact.getId() == contacts.get(i).getId()) {
             
@@ -57,6 +58,7 @@ public class PhonebookDao {
                 return true;
                 
             }
+        }
         
         return false;
     
