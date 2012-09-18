@@ -25,7 +25,7 @@ function Agenda(){
         $("ul#contatos li").each(function(){
             $(this).remove();
         })
-    }
+    },
     
     this.ordenar = function(){
         $("ul#contatos li").sort(asc_sort).appendTo('ul#contatos');
@@ -112,6 +112,9 @@ $(function() {
     $('a#botao-adicionar').click(function(){
 
         });
+    $('a#botao-sair').click(function(){
+        navigator.app.exitApp()
+    });
         
     $('button#botao-salvar-contato').click(function(e){
         e.preventDefault();
@@ -121,7 +124,13 @@ $(function() {
     });
 });
 
-
-
+document.addEventListener("backbutton", function(e){
+    if($.mobile.activePage.is('#paginaPrincipal')){
+        e.preventDefault();
+        navigator.app.exitApp();
+    } else {
+        navigator.app.backHistory()
+    }
+}, false);
 
 
