@@ -9,6 +9,9 @@
 \definecolor{dkgreen}{rgb}{0,0.6,0}
 \definecolor{gray}{rgb}{0.5,0.5,0.5}
 \definecolor{mauve}{rgb}{0.58,0,0.82}
+\definecolor{dkblue}{rgb}{0,0,.6}
+\definecolor{dkyellow}{cmyk}{0,0,.8,.3}
+
 \begin{document}
 
 \title{Utilizando SOAP para construir Web Service
@@ -131,12 +134,18 @@
 \section{Implementação}
 %Falar sobre a implementação do sistema, no caso falar como o Web services foi criado e afins
 \lstset{ 
-	language=PHP,               
+	language=php,               
 	breaklines=true,                
 	breakatwhitespace=false,        
-	keywordstyle=\color{blue},          
-	commentstyle=\color{dkgreen},       
-	stringstyle=\color{mauve},
+	basicstyle      = \small\ttfamily,
+  keywordstyle    = \color{dkblue},
+  stringstyle     = \color{red},
+  identifierstyle = \color{dkgreen},
+  commentstyle    = \color{gray},
+  emph            =[1]{php},
+  emphstyle       =[1]\color{black},
+  emph            =[2]{if,and,or,else},
+  emphstyle       =[2]\color{dkyellow},
 	captionpos=b,
 	numbers=left,                   % where to put the line-numbers
 		numberstyle=\tiny\color{gray},  % the style that is used for the line-numbers
@@ -145,9 +154,14 @@
 	
 	Para a demostração da implementação de um web services, foi desenvolvida uma aplicação de agenda telefônica com servidor(web services) em linguagem de programação PHP junto ao zend framework e no lado do cliente, uma aplicação android desenvolvida com phonegap e framework javascript jquery mobile.
 
-	Para a criação de um web service, utilizamos a classe Zend\_Soap\_Server que fornece toda funcionalidade de um web service no protocolo SOAP,
+	Para a criação de um web service, utilizamos a classe do zend framework chamada Zend\_Soap\_Server que fornece toda funcionalidade de um web services no protocolo SOAP. Na listing \ref{listing:CriacaoWebServices}, temos a instanciação da classe e a configuração do web service, onde passamos um vetor com a versão do protocolo SOAP para 1.2, url do web service e codificação de caracteres. Logo em seguida é informada a url do WSDL e a classe que possui os serviços que serão disponobilizados. E finalmente o método \emph{handle()} para inicializar o web services.
 	
-	\lstinputlisting[language=PHP,caption={Criação de Web Services}]{start_web_services_server.php}
+	\lstinputlisting[language=PHP,caption={Criação de Web Services},label={listing:CriacaoWebServices}]{start_web_services_server.php}
+	
+	Para quem for usar o web services sabia as operações que possam ser realizadas, utilizamos o WSDL para descrever os serviço da API em detalhes. Foi utilizada a classe Zend\_Soap\_AutoDiscover que permite detectar automaticamente e realizar o mapeamento do da classe de serviço.
+	
+	\lstinputlisting[language=PHP,caption={Criação de Web Services},label={listing:CriacaoWebServices}]{web_services_wsdl.php}
+	
 
 \section{Conclusão}
 This paragraph will end the body of this sample document.
