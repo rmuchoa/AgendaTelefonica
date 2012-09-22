@@ -159,52 +159,45 @@
 	breaklines=true,                
 	breakatwhitespace=false,        
 	basicstyle      = \small\ttfamily,
-  keywordstyle    = \color{dkblue},
-  stringstyle     = \color{red},
-  identifierstyle = \color{dkgreen},
-  commentstyle    = \color{gray},
-  emph            =[1]{php},
-  emphstyle       =[1]\color{black},
-  emph            =[2]{if,and,or,else},
-  emphstyle       =[2]\color{dkyellow},
+	  keywordstyle    = \color{dkblue},
+	  stringstyle     = \color{red},
+	  identifierstyle = \color{dkgreen},
+	  commentstyle    = \color{gray},
+	  emph            =[1]{php},
+	  emphstyle       =[1]\color{black},
+	  emph            =[2]{if,and,or,else},
+	  emphstyle       =[2]\color{dkyellow},
+	  emph            =[3]{as,new,public,function,return,class,private,null,extends},
+	  emphstyle       =[3]\color{dkblue},
 	captionpos=b,
 	numbers=left,                   % where to put the line-numbers
 		numberstyle=\tiny\color{gray},  % the style that is used for the line-numbers
      stepnumber=1       
 }
 	
-	Para a demostração da implementação de um web services, foi desenvolvida uma aplicação de agenda telefônica com servidor(web services) em linguagem de programação PHP junto ao zend framework e no lado do cliente, uma aplicação android desenvolvida com phonegap e framework javascript jquery mobile.
+	Para a demostração da implementação de um web services, foi desenvolvida uma aplicação de agenda telefônica com servidor(web services) em linguagem de programação PHP junto ao \emph{Zend Framework} e no lado do cliente, uma aplicação android desenvolvida com \emph{PhoneGap} e framework javascript \emph{JQuery Mobile}.
+	
+	\subsection{Aplicação Servidor}
 
 	Para a criação de um web service, utilizamos a classe do zend framework chamada Zend\_Soap\_Server que fornece toda funcionalidade de um web services no protocolo SOAP. Na listing \ref{listing:CriacaoWebServices}, temos a instanciação da classe e a configuração do web service, onde passamos um vetor com a versão do protocolo SOAP para 1.2, url do web service e codificação de caracteres. Logo em seguida é informada a url do WSDL e a classe que possui os serviços que serão disponobilizados. E finalmente o método \emph{handle()} para inicializar o web services.
 	
 	\lstinputlisting[language=PHP,caption={Criação de Web Services},label={listing:CriacaoWebServices}]{start_web_services_server.php}
 	
-	Para quem for usar o web services sabia as operações que possam ser realizadas, utilizamos o WSDL para descrever os serviço da API em detalhes. Foi utilizada a classe Zend\_Soap\_AutoDiscover que permite detectar automaticamente e realizar o mapeamento do da classe de serviço.
+	Para quem for usar o web services sabia as operações que possam ser realizadas, utilizamos o WSDL para descrever os serviço da API em detalhes. Foi utilizada a classe Zend\_Soap\_AutoDiscover que permite detectar automaticamente e realizar o mapeamento do da classe de serviço. Na listing \ref{listing:GeracaoWSDL}, verificamos se existe algum pedido de WSDL por parametro GET, caso exista ocorre a instanciação da classe AutoDiscover que faz a leitura da classe de modelo por meio de \emph{reflection} e gera o mapeamento WSDL.
 	
-	\lstinputlisting[language=PHP,caption={Criação de Web Services},label={listing:CriacaoWebServices}]{web_services_wsdl.php}
+	\lstinputlisting[language=PHP,caption={Geração do WSDL},label={listing:GeracaoWSDL}]{web_services_wsdl.php}
 	
-
+	Na classe de serviço, foi adicionado as operações disponíveis do web service para adicionar, remover e listar os contatos da agenda telefônica como mostrado na listing \ref{listing:ClasseServicos}.
+	
+	\lstinputlisting[language=PHP,caption={Classe de Serviços},label={listing:ClasseServicos}]{classe_servico.php}
+	
+	\subsection{Aplicação Cliente}
 
 \section{Conclusão}
-This paragraph will end the body of this sample document.
-Remember that you might still have Acknowledgments or
-Appendices; brief samples of these
-follow.  There is still the Bibliography to deal with; and
-we will make a disclaimer about that here: with the exception
-of the reference to the \LaTeX\ book, the citations in
-this paper are to articles which have nothing to
-do with the present subject and are used as
-examples only.
-%\end{document}  % This is where a 'short' article might terminate
+	Então podemos concluir que... cri cri cri
 
-%ACKNOWLEDGMENTS are optional
-\section{Acknowledgments}
-This section is optional; it is a location for you
-to acknowledge grants, funding, editing assistance and
-what have you.  In the present case, for example, the
-authors would like to thank Gerald Murray of ACM for
-his help in codifying this \textit{Author's Guide}
-and the \textbf{.cls} and \textbf{.tex} files that it describes.
+
+%\end{document}  % This is where a 'short' article might terminate
 
 %
 % The following two commands are all you need in the
