@@ -165,15 +165,15 @@
      stepnumber=1       
 }
 	
-	Para a demostração da implementação de um web services, foi desenvolvida uma aplicação de agenda telefônica com servidor(web services) em linguagem de programação PHP junto ao zend framework e no lado do cliente, uma aplicação android desenvolvida com phonegap e framework javascript jquery mobile.
+	Para a demostração da implementação de um web services, foi desenvolvida uma aplicação de agenda telefônica com servidor(web services) em linguagem de programação PHP junto ao Zend Framework e foi criada uma aplicação cliente para o sistema Android desenvolvida com Phonegap e framework javascript jquery mobile.
 
-	Para a criação de um web service, utilizamos a classe do zend framework chamada Zend\_Soap\_Server que fornece toda funcionalidade de um web services no protocolo SOAP. Na listing \ref{listing:CriacaoWebServices}, temos a instanciação da classe e a configuração do web service, onde passamos um vetor com a versão do protocolo SOAP para 1.2, url do web service e codificação de caracteres. Logo em seguida é informada a url do WSDL e a classe que possui os serviços que serão disponobilizados. E finalmente o método \emph{handle()} para inicializar o web services.
+	Para a criação de um web service, utilizamos a classe do zend framework chamada Zend\_Soap\_Server que fornece toda funcionalidade de um web services no protocolo SOAP. Na listing \ref{listing:CriacaoWsdl}, temos a instanciação da classe e a configuração do web service, onde passamos um vetor com a versão do protocolo SOAP para 1.2, url do web service e codificação de caracteres. Logo em seguida é informada a url do WSDL e a classe que possui os serviços que serão disponobilizados. E finalmente o método \emph{handle()} para inicializar o web services.
 	
 	\lstinputlisting[language=PHP,caption={Criação de Web Services},label={listing:CriacaoWebServices}]{start_web_services_server.php}
 	
 	Para quem for usar o web services sabia as operações que possam ser realizadas, utilizamos o WSDL para descrever os serviço da API em detalhes. Foi utilizada a classe Zend\_Soap\_AutoDiscover que permite detectar automaticamente e realizar o mapeamento do da classe de serviço.
 	
-	\lstinputlisting[language=PHP,caption={Criação de Web Services},label={listing:CriacaoWebServices}]{web_services_wsdl.php}
+	\lstinputlisting[language=PHP,caption={Criação de WSDL},label={listing:CriacaoWsdl}]{web_services_wsdl.php}
 	
 
 
