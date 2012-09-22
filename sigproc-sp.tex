@@ -24,14 +24,14 @@
 
 \author{
 	\alignauthor
-	Juliano Rodovalho\titlenote{Juliano R. Macedo}\\
+	Juliano Rodovalho\\
 		   \affaddr{Fedaral University of Pampa}\\
 		   \affaddr{Av Tiarajú, 810}\\
 		   \affaddr{Alegrete - RS}\\
 		   \email{j.rodovalho.m@gmail.com}
 	% 2nd. author
 	\alignauthor
-	Lucas P. Capanelli\titlenote{Lucas P. Capanelli}\\
+	Lucas P. Capanelli\\
 		   \affaddr{Fedaral University of Pampa}\\
 		   \affaddr{Av Tiarajú, 810}\\
 		   \affaddr{Alegrete - RS}\\
@@ -44,11 +44,11 @@
 		   \email{jrtadf@gmail.com}
 	\and  % use '\and' if you need 'another row' of author names
 	% 4th. author
-	\alignauthor Renan M. Uchoa\\
+	\alignauthor Renan M. Uchôa\\
 		   \affaddr{Fedaral University of Pampa}\\
 		   \affaddr{Av Tiarajú, 810}\\
 		   \affaddr{Alegrete - RS}\\
-		   \email{lleipuner@researchlabs.org}
+		   \email{renanmarceluchoa@gmail.com}
 	% 5th. author
 	\alignauthor Helison R. Teixeira\\
 		   \affaddr{Fedaral University of Pampa}\\
@@ -94,18 +94,21 @@
 
 \section{Webservices}
 		
-		Web Services são formas de utilizar XML para mapear programas, objetos ou banco de dados ou para funções de negócio abrangentes. Usando um documento XML criado na forma de uma mensagem, um programa envia uma requisição para um Web Service através da rede, e eventualmente recebe uma resposta também na forma de um documento XML. Os padrões Web Service definem o formato das mensagens, especificam a interface para qual as mensagens são enviadas, descrevem as convenções para mapear os conteúdos das mensagens dentro e fora dos programas que implementam o serviço, e definem mecanismos para publicar e para descobrir interfaces de Web Services.  \cite{UNDERWEBSERVICES}
-
-	\subsection{O que são?}
-		Web Services é um método de comunicação entre dispositivos computacionais distribuídos pela World Wide Web(WEB), um web services pode converter sua aplicação em uma aplicação web que poderá publicar suas funções ou mensagens para o restante da WEB, sua arquitetura consiste em oferecer arquivos XML contendo as informações requisitadas por seus clientes, de acordo com sua game de conteúdos disponíveis.\cite{WEBS}
+		Web Services são formas de utilizar XML para mapear programas, objetos ou banco de dados ou para funções de negócio abrangentes. Usando um documento XML criado na forma de uma mensagem, um programa envia uma requisição para um Web Service através da rede, e eventualmente recebe uma resposta também na forma de um documento XML. Os padrões Web Service definem o formato das mensagens, especificam a interface para qual as mensagens são enviadas, descrevem as convenções para mapear os conteúdos das mensagens dentro e fora dos programas que implementam o serviço, e definem mecanismos para publicar e para descobrir interfaces de Web Services.
 		
 		Web Services oferecem uma camada de abstração acima dos sistemas existentes, assim como Servidores de Aplicação, CORBA, servidores .Net, aplicativos mensageiros e pacotes de aplicação. Web Services trabalham sobre 
-		uma camada de abstração similar a da Internet e são compatíveis de realizar a transição entre qualquer sistema operacional, plataforma de hardware ou linguagem de programação, assim como a WEB é.
+		uma camada de abstração similar a da Internet e são compativeis de realizar a transição entre qualquer sistema operacional, plataforma de hardware ou linguagem de programação, assim como a WEB é.
 		
-		Ao contrário dos sistemas distribuidos existentes, os Web Services são adaptados para a Web. A maioria das tecnologias de computação distribuída incluem os protocolos de comunicação em seu escopo. Com Web Services os protocolos de comunicação já estão prontos e disponíveis por toda a Web. 
+		Ao contrário dos sistemas distribuidos existentes, os Web Services são adaptados para a Web. A maioria das tecnologias de computação distribuida incluem os protocolos de comunicação em seu escopo. Com Web Services os protocolos de comunicação já estão prontos e disponíveis por toda a Web. 
 		
-		Esta tecnologia pode ser usada de várias maneiras. Web Services podem ser executados em clientes de desktop e portáteis para acessar aplicações de Internet, tais como sistemas de reservas e sistemas de controle de pedidos. Web Services também podem ser usados para integração business-to-business (B2B), conectando aplicativos executados por diversas organizações na mesma cadeia de fornecimento. Web Services podem também resolver um dos problema mais amplo de integração de aplicações empresariais (IAE), conectando múltiplas aplicações de uma única organização a vários outros aplicativos, tanto dentro como fora do firewall. Em todos estes casos, as tecnologias de Web Services fornecem o padrão que liga diversas peças de software. \cite{UNDERWEBSERVICES}
+		Esta tecnologia pode ser usada de várias maneiras. Web Services podem ser executados em clientes de desktop e portáteis para acessar aplicações de Internet, tais como sistemas de reservas e sistemas de controle de pedidos. Web Services também podem ser usados para integração business-to-business (B2B), conectando aplicativos executados por diversas organizações na mesma cadeia de fornecimento. Web Services podem também resolver um dos problema mais amplo de integração de aplicações empresariais (IAE), conectando múltiplas aplicações de uma única organização a vários outros aplicativos, tanto dentro como fora do firewall. Em todos estes casos, as tecnologias de Web Services fornecem o padrão que liga diversas peças de software.
 		
+		\cite{UNDERWEBSERVICES}
+
+	\subsection{O que são?}
+		Web Services é um método de comunicação entre dispositivos computacionais distribuidos pela World Wide Web(WEB), um web services pode converter sua aplicação em uma aplicação web que podera publicar suas funções ou mensagens para o restante da WEB, sua arquitetura consiste em oferecer arquivos XML contendo as informações requisitadas por seus clientes, de acordo com sua game de conteudos disponíveis.\cite{WEBS}
+		
+	
 	\subsection{Funcionamento}
 		
 \begin{figure}[h]
@@ -136,25 +139,7 @@
 		
 		
 \section{Implementação}
-%Falar sobre a implementação do sistema, no caso falar como o Web services foi criado e afins
-\lstset{ 
-	language=PHP,               
-	breaklines=true,                
-	breakatwhitespace=false,        
-	keywordstyle=\color{blue},          
-	commentstyle=\color{dkgreen},       
-	stringstyle=\color{mauve},
-	captionpos=b,
-	numbers=left,                   % where to put the line-numbers
-		numberstyle=\tiny\color{gray},  % the style that is used for the line-numbers
-     stepnumber=1       
-}
-	
-	Para a demostração da implementação de um web services, foi desenvolvida uma aplicação de agenda telefônica com servidor(web services) em linguagem de programação PHP junto ao zend framework e no lado do cliente, uma aplicação android desenvolvida com phonegap e framework javascript jquery mobile.
-
-	Para a criação de um web service, utilizamos a classe Zend\_Soap\_Server que fornece toda funcionalidade de um web service no protocolo SOAP,
-	
-	\lstinputlisting[language=PHP,caption={Criação de Web Services}]{start_web_services_server.php}
+%Falar sobre a implementação do sistema, no caso falar como o Web services foi criado e afins 
 
 \section{Conclusão}
 This paragraph will end the body of this sample document.
