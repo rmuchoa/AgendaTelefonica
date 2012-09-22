@@ -5,10 +5,10 @@
 /sigproc-sp.pdf
 /*.dvi
 /*.gz
-/*.dvi
 /*.ps
 /*.pdf
 /sigproc-sp.tex.REMOTE.tex
 /sigproc-sp.tex.BASE.tex
 /sigproc-sp.tex.LOCAL.tex
 
+/*.tex.recover.bak~

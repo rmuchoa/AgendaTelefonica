@@ -14,13 +14,13 @@
 
 \begin{document}
 
-\title{Utilizando SOAP para construir Web Service
-\titlenote{(Does NOT produce the permission block, copyright information nor page numbering). For use with ACM\_PROC\_ARTICLE-SP.CLS. Supported by ACM.}}
-\subtitle{[Extended Abstract]
-\titlenote{A full version of this paper is available as
-\textit{Author's Guide to Preparing ACM SIG Proceedings Using
-\LaTeX$2_\epsilon$\ and BibTeX} at
-\texttt{www.acm.org/eaddress.htm}}}
+\title{Utilizando SOAP para construir Web Services}
+%\titlenote{(Does NOT produce the permission block, copyright information nor page numbering). For use with ACM\_PROC\_ARTICLE-SP.CLS. Supported by ACM.}}
+%\subtitle{[Extended Abstract]
+%\titlenote{A full version of this paper is available as
+%\textit{Author's Guide to Preparing ACM SIG Proceedings Using
+%\LaTeX$2_\epsilon$\ and BibTeX} at
+%\texttt{www.acm.org/eaddress.htm}}}
 
 \numberofauthors{5} 
 
@@ -33,30 +33,30 @@
 		   \email{j.rodovalho.m@gmail.com}
 	% 2nd. author
 	\alignauthor
-	Lucas P. Capanelli\\
-		   \affaddr{Fedaral University of Pampa}\\
-		   \affaddr{Av Tiarajú, 810}\\
-		   \affaddr{Alegrete - RS}\\
-		   \email{webmaster@marysville-ohio.com}
-	% 3rd. author
-	\alignauthor  Rafael T. Amorim\\
+	Rafael T. Amorim\\
 		   \affaddr{Fedaral University of Pampa}\\
 		   \affaddr{Av Tiarajú, 810}\\
 		   \affaddr{Alegrete - RS}\\
 		   \email{jrtadf@gmail.com}
-	\and  % use '\and' if you need 'another row' of author names
-	% 4th. author
-	\alignauthor Renan M. Uchôa\\
+	% 3rd. author
+	\alignauthor  Renan M. Uchôa\\
 		   \affaddr{Fedaral University of Pampa}\\
 		   \affaddr{Av Tiarajú, 810}\\
 		   \affaddr{Alegrete - RS}\\
 		   \email{renanmarceluchoa@gmail.com}
-	% 5th. author
+	\and  % use '\and' if you need 'another row' of author names
+	% 4th. author
 	\alignauthor Helison R. Teixeira\\
 		   \affaddr{Fedaral University of Pampa}\\
 		   \affaddr{Av Tiarajú, 810}\\
 		   \affaddr{Alegrete - RS}\\
 		   \email{helisonreus@gmail.com}
+	% 5th. author
+	\alignauthor Lucas P. Capanelli\\
+		   \affaddr{Fedaral University of Pampa}\\
+		   \affaddr{Av Tiarajú, 810}\\
+		   \affaddr{Alegrete - RS}\\
+		   \email{lucas.capanelli.es@gmail.com}
 %	\alignauthor 
 }
 
@@ -68,11 +68,11 @@
 
 
 % A category with the (minimum) three required fields
-\category{H.4}{Information Systems Applications}{Miscellaneous}
+%\category{H.4}{Information Systems Applications}{Miscellaneous}
 %A category including the fourth, optional field follows...
-\category{D.2.8}{Software Engineering}{Metrics}[complexity measures, performance measures]
+%\category{D.2.8}{Software Engineering}{Metrics}[complexity measures, performance measures]
 
-\terms{Theory}
+%\terms{Theory}
 
 \keywords{Webservices, SOAP, XML} 
 
@@ -103,9 +103,7 @@
 		
 		Ao contrário dos sistemas distribuídos existentes, os Web Services são adaptados para a Web. A maioria das tecnologias de computação distribuída incluem os protocolos de comunicação em seu escopo. Com Web Services os protocolos de comunicação já estão prontos e disponíveis por toda a Web. 
 		
-		Esta tecnologia pode ser usada de várias maneiras. Web Services podem ser executados em clientes de desktop e portáteis para acessar aplicações de Internet, tais como sistemas de reservas e sistemas de controle de pedidos. Web Services também podem ser usados para integração business-to-business (B2B), conectando aplicativos executados por diversas organizações na mesma cadeia de fornecimento. Web Services podem também resolver um dos problema mais amplo de integração de aplicações empresariais (IAE), conectando múltiplas aplicações de uma única organização a vários outros aplicativos, tanto dentro como fora do firewall. Em todos estes casos, as tecnologias de Web Services fornecem o padrão que liga diversas peças de software.
-		
-		\cite{UNDERWEBSERVICES}
+		Esta tecnologia pode ser usada de várias maneiras. Web Services podem ser executados em clientes de desktop e portáteis para acessar aplicações de Internet, tais como sistemas de reservas e sistemas de controle de pedidos. Web Services também podem ser usados para integração business-to-business (B2B), conectando aplicativos executados por diversas organizações na mesma cadeia de fornecimento. Web Services podem também resolver um dos problema mais amplo de integração de aplicações empresariais (IAE), conectando múltiplas aplicações de uma única organização a vários outros aplicativos, tanto dentro como fora do firewall. Em todos estes casos, as tecnologias de Web Services fornecem o padrão que liga diversas peças de software.\cite{UNDERWEBSERVICES}
 
 	\subsection{O que são?}
 		Web Services é um método de comunicação entre dispositivos computacionais distribuídos pela World Wide Web(WEB), um web services pode converter sua aplicação em uma aplicação web que poderá publicar suas funções ou mensagens para o restante da WEB, sua arquitetura consiste em oferecer arquivos XML contendo as informações requisitadas por seus clientes, de acordo com sua game de conteúdos disponíveis.\cite{WEBS}
@@ -113,15 +111,15 @@
 	
 	\subsection{Funcionamento}
 		
-		WebServices normalmente são implementados usando linguagens de programação projetados para interação com a Web, como Java Servlets ou Application Server Pages (ASPs) que exigem um programa de back-end. Essas implementações de Web Services também são normalmente baseados em WSDL ou representados usando WSDL. Ou seja, ou novos serviços podem ser gerados a partir de WSDL ou serviços existentes podem ser descritos usando WSDL. É provável que ambas as abordagens vai pegar, como desenhar e expor serviços da Web é obrigado a ser um processo iterativo. Nem abordagem por si só vai fornecer a melhor solução em todos os casos.
+		WebServices normalmente são implementados usando linguagens de programação projetados para interação com a Web, como Java Servlets ou Application Server Pages (ASPs) que exigem um programa de back-end. 
 
-%\begin{figure}[h]
-%	\begin{center}
-%			\includegraphics[width=200px]{NOME DA IAMAGEM}
-%				 \caption{DESCRIÇÃO DA IMAGEM}
-%			\label{fig:AQUI O NOME DA IMAGEM}
-%	\end{center}
-%\end{figure}
+\begin{figure}[h]
+	\begin{center}
+			\includegraphics[width=250px]{WebServiceFuncionamento}
+				 \caption{DESCRIÇÃO DA IMAGEM}
+			\label{fig:WebServiceFuncionamento}
+	\end{center}
+\end{figure}
 
 		
 \section{WSDL}
@@ -171,7 +169,7 @@
 	
 	Para a demostração da implementação de um web services, foi desenvolvida uma aplicação de agenda telefônica com servidor(web services) em linguagem de programação PHP junto ao \emph{Zend Framework} e no lado do cliente, uma aplicação android desenvolvida com \emph{PhoneGap} e framework javascript \emph{JQuery Mobile}.
 
-	Para a criação de um web service, utilizamos a classe do zend framework chamada Zend\_Soap\_Server que fornece toda funcionalidade de um web services no protocolo SOAP. Na listing \ref{listing:CriacaoWebServices}, temos a instanciação da classe e a configuração do web service, onde passamos um vetor com a versão do protocolo SOAP para 1.2, url do web service e codificação de caracteres. Logo em seguida é informada a url do WSDL e a classe que possui os serviços que serão disponobilizados. E finalmente o método \emph{handle()} para inicializar o web services.
+	Para a criação de um web service, utilizamos a classe do zend framework chamada Zend\_Soap\_Server que fornece toda funcionalidade de um web services no protocolo SOAP. Na listing \ref{listing:CriacaoWsdl}, temos a instanciação da classe e a configuração do web service, onde passamos um vetor com a versão do protocolo SOAP para 1.2, url do web service e codificação de caracteres. Logo em seguida é informada a url do WSDL e a classe que possui os serviços que serão disponobilizados. E finalmente o método \emph{handle()} para inicializar o web services.
 	
 	\lstinputlisting[language=PHP,caption={Criação de Web Services},label={listing:CriacaoWebServices}]{start_web_services_server.php}
 	
