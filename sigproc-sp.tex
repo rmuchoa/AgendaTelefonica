@@ -159,7 +159,7 @@
 	  emphstyle       =[1]\color{black},
 	  emph            =[2]{if,and,or,else},
 	  emphstyle       =[2]\color{dkyellow},
-	  emph            =[3]{as,new,public,function,return,class,private,null},
+	  emph            =[3]{as,new,public,function,return,class,private,null,extends},
 	  emphstyle       =[3]\color{dkblue},
 	captionpos=b,
 	numbers=left,                   % where to put the line-numbers
@@ -168,6 +168,8 @@
 }
 	
 	Para a demostração da implementação de um web services, foi desenvolvida uma aplicação de agenda telefônica com servidor(web services) em linguagem de programação PHP junto ao \emph{Zend Framework} e no lado do cliente, uma aplicação android desenvolvida com \emph{PhoneGap} e framework javascript \emph{JQuery Mobile}.
+	
+	\subsection{Aplicação Servidor}
 
 	Para a criação de um web service, utilizamos a classe do zend framework chamada Zend\_Soap\_Server que fornece toda funcionalidade de um web services no protocolo SOAP. Na listing \ref{listing:CriacaoWebServices}, temos a instanciação da classe e a configuração do web service, onde passamos um vetor com a versão do protocolo SOAP para 1.2, url do web service e codificação de caracteres. Logo em seguida é informada a url do WSDL e a classe que possui os serviços que serão disponobilizados. E finalmente o método \emph{handle()} para inicializar o web services.
 	
@@ -180,6 +182,8 @@
 	Na classe de serviço, foi adicionado as operações disponíveis do web service para adicionar, remover e listar os contatos da agenda telefônica como mostrado na listing \ref{listing:ClasseServicos}.
 	
 	\lstinputlisting[language=PHP,caption={Classe de Serviços},label={listing:ClasseServicos}]{classe_servico.php}
+	
+	\subsection{Aplicação Cliente}
 
 \section{Conclusão}
 	Então podemos concluir que... cri cri cri
