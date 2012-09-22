@@ -16,8 +16,8 @@ function dec_sort(a, b){
 }
 
 function Agenda(){
-    this.adicionar = function(name, phone){
-        $("ul#contatos").append("<li data-theme='c'><a href='#paginaDetalhesContato' data-transition='slide' telefone='"+phone+"'>"+name+"</a></li>");
+    this.adicionar = function(idContact, name, phone){
+        $("ul#contatos").append("<li data-theme='c'><a href='#paginaDetalhesContato' data-transition='slide' id-contact='"+idContact+"' telefone='"+phone+"'>"+name+"</a></li>");
         $('ul#contatos').listview('refresh');
     },
     
@@ -29,6 +29,7 @@ function Agenda(){
     
     this.ordenar = function(){
         $("ul#contatos li").sort(asc_sort).appendTo('ul#contatos');
+        $('ul#contatos').listview('refresh');
     }
     
 }
@@ -43,14 +44,14 @@ function WebService(webserviceUrl){
             type: "POST",
             url: this.webserviceUrl,
             //contentType: "text/xml",
-            data: $('script#soap-template-list').html(),
+            data: $('script#soap-template-get-contacts').html(),
             //dataType: "xml",
             processData: false,
             async: false,
             success: function(data, textStatus, jqXHR){
                 console.log('Dados recebido do web service: ' + data);
                 $(data).find('item').each(function () {
-                    agenda.adicionar($(this).find('name').text(), $(this).find('phone').text())
+                    agenda.adicionar($(this).find('id_contact').text(), $(this).find('name').text(), $(this).find('phone').text());
                 });
             },
             error: function(request, status, error){
@@ -60,9 +61,27 @@ function WebService(webserviceUrl){
     },
     
     this.adicionar = function(name, phone){
-        template = $('script#soap-template-add').html();
+        template = $('script#soap-template-add-contact').html();
         template = template.replace("${name}", name);
         template = template.replace("${phone}", phone);
+        $.ajax({
+            type: "POST",
+            url: this.webserviceUrl,
+            data: template,
+            processData: false,
+            async: false,
+            success: function(data, textStatus, jqXHR){
+                console.log('Dados recebido do web service: ' + data);
+            },
+            error: function(request, status, error){
+                console.log('erro');
+            }
+        });
+    },
+    
+    this.excluir = function(idContact){
+        template = $('script#soap-template-remove-contact').html();
+        template = template.replace("${idContact}", idContact);
         $.ajax({
             type: "POST",
             url: this.webserviceUrl,
@@ -104,21 +123,47 @@ function Dialog(){
 
 var dialog = new Dialog();
 //var webservice = new WebService("http://localhost/AgendaTelefonicaPHPSOAP/public/webservice.php");
-url = prompt("URL do Web service", "http://127.0.0.1:8080/PhonebookService/PhonebookService")
+url = prompt("URL do Web service", "http://localhost/AgendaTelefonicaPHPSOAP/public/webservice.php")
 var webservice = new WebService(url);
 
 //eventos
 $(function() {
+    webservice.list();
+    agenda.ordenar();
+    
     $('a#botao-adicionar').click(function(){
 
-        });
+    });
+    
     $('a#botao-sair').click(function(){
-        navigator.app.exitApp()
+        device.exitApp();
+    });
+    
+    $('ul#contatos li a').live("click", function(){
+        console.log('você clicou no contato '+$(this).attr('id-contact'));
+        $("div#detalhe-pessoa").attr('IdContact', $(this).attr('id-contact'));
+        $("h3#detalhe-nome").text($(this).text());
+        $("span#detalhe-telefone").html($(this).attr('telefone'));
+        //$('div#collapsibleDetalhes').collapsibleset('refresh');
+    });
+    $('a#botao-excluir').click(function(){
+        idContact = $(this).parent().parent().parent().attr('IdContact');
+        webservice.excluir(idContact);
+        agenda.limpar();
+        webservice.list();
+        agenda.ordenar();
+        dialog.changeData("Excluido!", "O contato foi excluido com sucesso!",'#paginaPrincipal');
+        dialog.show();
     });
         
     $('button#botao-salvar-contato').click(function(e){
         e.preventDefault();
-        console.log('clicked save');
+        webservice.adicionar($('input#nome').val(), $('input#telefone').val())
+        $('input#nome').val('');
+        $('input#telefone').val('');
+        agenda.limpar();
+        webservice.list();
+        agenda.ordenar();
         dialog.changeData("Sucesso!", "O contato foi salvo com sucesso!",'#paginaPrincipal');
         dialog.show();
     });

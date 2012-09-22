@@ -1,16 +1,11 @@
 <!DOCTYPE html>
 <html>
     <head>
-
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>
-        </title>
+        <title>Agenda</title>
         <link rel="stylesheet" href="jquery/jquery.mobile-1.1.1.min.css" />
         <link rel="stylesheet" href="my.css" />
-        <style>
-            /* App custom styles */
-        </style>
         <script type="text/javascript" charset="utf-8" src="js/cordova-2.0.0.js"></script>
         <script src="js/jquery-1.8.1.min.js">
         </script>
@@ -18,22 +13,32 @@
         </script>
         <script src="js/my.js">
         </script>
-        <script id="soap-template-add" type="application/soap-template">
-        <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://service.com/">
-            <soapenv:Header/>
-            <soapenv:Body>
-                <ser:insert>
-                    <contact>${name}</contact>
-                    <phone>${phone}</phone>
-                </ser:insert>
-            </soapenv:Body>
-        </soapenv:Envelope>
-    </script>
-    <script id="soap-template-list" type="application/soap-template">
+        <script id="soap-template-add-contact" type="application/soap-template">
         <soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://localhost/AgendaTelefonicaPHPSOAP/public/webservice.php">
             <soapenv:Header/>
             <soapenv:Body>
-                <web:contatos soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+                <web:addContact soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+                    <name xsi:type="xsd:string">${name}</name>
+                    <phone xsi:type="xsd:string">${phone}</phone>
+                </web:addContact>
+            </soapenv:Body>
+        </soapenv:Envelope>
+    </script>
+    <script id="soap-template-get-contacts" type="application/soap-template">
+        <soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://localhost/AgendaTelefonicaPHPSOAP/public/webservice.php">
+            <soapenv:Header/>
+            <soapenv:Body>
+                <web:getContacts soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </soapenv:Body>
+        </soapenv:Envelope>
+    </script>
+    <script id="soap-template-remove-contact" type="application/soap-template">
+        <soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://localhost/AgendaTelefonicaPHPSOAP/public/webservice.php">
+            <soapenv:Header/>
+            <soapenv:Body>
+                <web:removeContact soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+                    <idContact xsi:type="xsd:int">${idContact}</idContact>
+                </web:removeContact>
             </soapenv:Body>
         </soapenv:Envelope>
     </script>
@@ -52,7 +57,7 @@
             <a id="botao-sair" data-theme="d" data-role="button" data-transition="fade"  data-icon="arrow-l" class="ui-btn-left">
                 Sair
             </a>
-                        
+
 
         </div><!-- /header -->
         <div data-role="content">	
@@ -62,11 +67,7 @@
                 </li>
             </ul>
             <ul id="contatos" data-role="listview" data-inset="true" data-filter="true">
-                <li><a href="#paginaDetalhesContato">Acura</a></li>
-                <li><a href="#paginaDetalhesContato">Audi</a></li>
-                <li><a href="#paginaDetalhesContato">BMW</a></li>
-                <li><a href="#paginaDetalhesContato">Cadillac</a></li>
-                <li><a href="#paginaDetalhesContato">Ferrari</a></li>
+                
             </ul>	
         </div><!-- /content -->
         <div data-role="footer">
@@ -115,13 +116,13 @@
                 Voltar
             </a>
         </div><!-- /header -->
-        <div data-role="content">	
-            <div data-role="collapsible" data-content-theme="c" data-collapsed="false">
-                <h3>Rafael</h3>
-                <p>Telefone: (55) 8157-9997</p>
+        <div data-role="content">
+            <div id="detalhe-pessoa" IdContact="0">
+                <h3 id="detalhe-nome">Rafael</h3>
+                <p>Telefone: <span id="detalhe-telefone">(55) 8157-9997</span></p>
                 <div data-role="controlgroup" data-type="horizontal">
                     <a href="#paginaPrincipal" data-role="button" data-icon="back">Voltar</a>
-                    <a href="#paginaPrincipal" data-role="button" data-icon="delete">Excluir</a>
+                    <a id="botao-excluir" href="#paginaPrincipal" data-role="button" data-icon="delete">Excluir</a>
                 </div>
             </div>
         </div><!-- /content -->
@@ -137,6 +138,6 @@
             <a href="#" class="sure-do" data-role="button" data-theme="b">Ok</a>
         </div>
     </div>
-    
+
 </body>
 </html>
