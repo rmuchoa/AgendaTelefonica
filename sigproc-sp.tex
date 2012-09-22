@@ -111,16 +111,24 @@
 	
 	\subsection{Funcionamento}
 		
-		WebServices normalmente são implementados usando linguagens de programação projetados para interação com a Web, como Java Servlets ou Application Server Pages (ASPs) que exigem um programa de back-end. 
+		WebServices normalmente são implementados usando linguagens de programação projetados para interação com a Web, como Java Servlets ou Application Server Pages (ASPs) que exigem um programa de back-end.
+		
+		Como mostra a Figura 1.1 \ref{fig:WebServiceFuncionamento}, ao enviar um documento para um endereço de um Web Service, um programa usa um XML squema de um tipo específico como o WSDL, para transformar dados de sua fonte de entrada - um arquivo estruturado neste exemplo - para produzir uma instância de um documento XML no formato consistente com que o Web Sevice de destino espera, conforme descrito no mesmo arquivo WSDL. O arquivo WSDL é usado para definir a entrada e as transformações de dados de saída.
+		
 
 \begin{figure}[h]
 	\begin{center}
 			\includegraphics[width=250px]{WebServiceFuncionamento}
-				 \caption{DESCRIÇÃO DA IMAGEM}
+				 \caption{Figura 1.1 - Web services use XML documents and transform them into and out of programs}
 			\label{fig:WebServiceFuncionamento}
 	\end{center}
 \end{figure}
 
+		
+		O processador de SOAP do computador de envio transforma os dados de seu formato nativo, para os tipos de dados do schema XML predefinido, contidos no arquivo WSDL, para texto, ponto flutuante, e outros, utilizando para isso tabelas de mapeamento. As tabelas de mapeamento associam os tipos de dados nativos com os seus correspondentes tipos de dados do schema XML. (Padrão de mapeamento são amplamente disponíveis para Java, Visual Basic, CORBA e outros sistemas dos tipos comumente usados. Muitas ferramentas de mapeamento XML estão disponíveis para definir mapeamentos personalizados ou especiais.) O processador SOAP do computador receptor realiza a transformação em sentido inverso, mapeando do schema XML, os tipos de dados correspondentes aos tipos de dados nativos.
+		
+		A URL, em uso generalizado na web, aponta para um endereço TCP (Transmission Control Protocol) que contém um recurso web, um Web Service schema contidos em arquivos acessíveis através da Internet  para download. Os Web Services disponíveis em um determinados endereços da Internet são identificados dentro de um arquivo público WDSL que pode ser baixado para o computador de envio e usado para gerar as mensagens. As Companhias também podem postar uma listagem no diretório público UDDI, apontando para o mesmo arquivo WSDL, para que clientes possam descobrir a empresa através do serviço UDDI. Em geral, quem quiser interagir com os Web Services deve encontrar uma maneira de obter e usar esse arquivo WSDL especial para gerar as mensagens.
+		
 		
 \section{WSDL}
 	
