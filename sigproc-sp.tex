@@ -1,15 +1,7 @@
 \documentclass{acm_proc_article-sp}
 \usepackage[utf8]{inputenc}
 \usepackage{url}
-\usepackage{listings}
-\usepackage{color}
-\usepackage{graphicx}
 \graphicspath{{./imagens/}}
-
- 
-\definecolor{dkgreen}{rgb}{0,0.6,0}
-\definecolor{gray}{rgb}{0.5,0.5,0.5}
-\definecolor{mauve}{rgb}{0.58,0,0.82}
 \begin{document}
 
 \title{Utilizando SOAP para construir Web Service
@@ -79,45 +71,39 @@
 		
 		
 \section{XML}
-		XML é uma linguagem de marcação extensível, projetada para transportar, armazenar e processar dados. O XML representa um conjunto de especificações especificadas e relatadas pelo World Wide Web Consortium(W3C) e outros. O XML possui um ancestral em comum com o Standard Generalized Markup Language(SGML). Uma das caracteristicas do SGML era a separação do formato do conteudo. Se um documento foi produzido para o formato A4 ou carta, por exemplo, o formato era descrito independentemente do conteudo do documento. O mesmo documento portanto pode ser enviado em vários formatos sem mudar seu conteúdo. O pricipio das linguagens de marcação são aplicadas para os Web Services através da separação da instancia do documento, que contém os dados, e o esquema, que descreve a estrutura dos dados e os tipos, incluindo informações de semântica muito úteis para fazer o mapeamento do documento para várias linguagens de programação e sistemas de software.
+		XML é uma linguagem de marcação extensível, projetada para transportar, armazenar e processar dados. O XML representa um conjunto de especificações especificadas e relatadas pelo World Wide Web Consortium(W3C) e outros. O XML possui um ancestral em comum com o Standard Generalized Markup Language(SGML). Uma das características do SGML era a separação do formato do conteúdo. Se um documento foi produzido para o formato A4 ou carta, por exemplo, o formato era descrito independentemente do conteúdo do documento. O mesmo documento portanto pode ser enviado em vários formatos sem mudar seu conteúdo. O principio das linguagens de marcação são aplicadas para os Web Services através da separação da instancia do documento, que contém os dados, e o esquema, que descreve a estrutura dos dados e os tipos, incluindo informações de semântica muito úteis para fazer o mapeamento do documento para várias linguagens de programação e sistemas de software.
 		
 		O XML é similar ao HyperText Markup Language(HTML), contém elementos, atributos e valores. Bem feitos os documentos em XML podem ser exibidos em navegadores web, porém, esse aspecto do XML não é muito relevante para os Web services. O HTML contém um conjunto finito de elementos e atributos, porém o XML permite ser definido tantos conjuntos quanto necessários.
 		
-		Os elementos e atributos de um arquivo XML definem independentemente seus tipos e estruturas de informação para o tipo de dado que eles contém, incluindo a capacidade de modelar dados e estruturas especificas à um dominio de software. (Um dominio de software pode ser uma linguagem de programação, um middleware, um pacote de aplicações, ou um sistema de gerenciamento de dados). A transformação de uma representação genérica de dados contida em um XML em aplicativo, ou dominio de software. A representação específica de dados é o aspecto principal dos Web services.
+		Os elementos e atributos de um arquivo XML definem independentemente seus tipos e estruturas de informação para o tipo de dado que eles contém, incluindo a capacidade de modelar dados e estruturas especificas à um domínio de software. (Um domínio de software pode ser uma linguagem de programação, um middleware, um pacote de aplicações, ou um sistema de gerenciamento de dados). A transformação de uma representação genérica de dados contida em um XML em aplicativo, ou domínio de software. A representação específica de dados é o aspecto principal dos Web Services.
 		
-		Os Web Services utilizam esquemas em XML para a validação de mensagens. O SOAP do computador que esta enviando a mensagem transforma seus dados da forma nativa para o esquema XML pré-definido contido no arquivo WDSL para texto, pontos flutuantes, e outros, usando o mapeamento das tabelas. O Mapeamento das tabelas associa tipos de dados nativos com os tipos de dados correspondentes no XML. Padrões de mapeamento estão disponíveis para Java, Visual Basic, CORBA, e outros tipos mais comuns de tipos de sistema. Muitas ferramentas XML estao disponíveis para definir mapeamentos customizados ou especiais. O computador que recebe o processo SOAP executa a transformação reversa, mapeando os tipos de dados do XML para os seus tipos de dados correspondentes.
+		Os Web Services utilizam esquemas em XML para a validação de mensagens. O SOAP do computador que esta enviando a mensagem transforma seus dados da forma nativa para o esquema XML pré-definido contido no arquivo WDSL para texto, pontos flutuantes, e outros, usando o mapeamento das tabelas. O Mapeamento das tabelas associa tipos de dados nativos com os tipos de dados correspondentes no XML. Padrões de mapeamento estão disponíveis para Java, Visual Basic, CORBA, e outros tipos mais comuns de tipos de sistema. Muitas ferramentas XML estão disponíveis para definir mapeamentos customizados ou especiais. O computador que recebe o processo SOAP executa a transformação reversa, mapeando os tipos de dados do XML para os seus tipos de dados correspondentes.
 		
-		A sintaxe usada nas tecnologias de Web services especifica como os dados são genericamente representados, define como e com quais qualidades de serviço os dados são transmitidos, e detalha como o serviço é enviado e recebido. As implementações de Web service decodificam esses vários bits de XML para interagir com várias aplicações e dominios de software por baixo do serviço.\cite{UNDERWEBSERVICES}
+		A sintaxe usada nas tecnologias de Web services especifica como os dados são genericamente representados, define como e com quais qualidades de serviço os dados são transmitidos, e detalha como o serviço é enviado e recebido. As implementações de Web service decodificam esses vários bits de XML para interagir com várias aplicações e domínios de software por baixo do serviço.\cite{UNDERWEBSERVICES}
 		
 \section{HTTP}
-		O Hypertext Transfer Protocol(HTTP) é um protocolo de nível de aplicação, utilizado em sistemas distribuidos, colaborativos e sistemas de informação multimídia. É um protocolo genérico, e não proprietario, pode ser usado para muitos objetivos, além do hipertexto, como domínios de servidores e gerenciamento de objetos de sistemas distribuidos, através da extensão de seus métodos de requisição, códigos de erro e cabeçalhos. Uma característica do HTTP é a escrita e negociação da representação de dados, habilitando os sistemas a fazer a construção dos dados a serem transferidos independentemente.\cite{HTTP-1.1}
+		O Hypertext Transfer Protocol(HTTP) é um protocolo de nível de aplicação, utilizado em sistemas distribuídos, colaborativos e sistemas de informação multimídia. É um protocolo genérico, e não proprietário, pode ser usado para muitos objetivos, além do hipertexto, como domínios de servidores e gerenciamento de objetos de sistemas distribuídos, através da extensão de seus métodos de requisição, códigos de erro e cabeçalhos. Uma característica do HTTP é a escrita e negociação da representação de dados, habilitando os sistemas a fazer a construção dos dados a serem transferidos independentemente.\cite{HTTP-1.1}
 
 \section{Webservices}
 		
 		Web Services são formas de utilizar XML para mapear programas, objetos ou banco de dados ou para funções de negócio abrangentes. Usando um documento XML criado na forma de uma mensagem, um programa envia uma requisição para um Web Service através da rede, e eventualmente recebe uma resposta também na forma de um documento XML. Os padrões Web Service definem o formato das mensagens, especificam a interface para qual as mensagens são enviadas, descrevem as convenções para mapear os conteúdos das mensagens dentro e fora dos programas que implementam o serviço, e definem mecanismos para publicar e para descobrir interfaces de Web Services.
 		
 		Web Services oferecem uma camada de abstração acima dos sistemas existentes, assim como Servidores de Aplicação, CORBA, servidores .Net, aplicativos mensageiros e pacotes de aplicação. Web Services trabalham sobre 
-		uma camada de abstração similar a da Internet e são compativeis de realizar a transição entre qualquer sistema operacional, plataforma de hardware ou linguagem de programação, assim como a WEB é.
+		uma camada de abstração similar a da Internet e são compatíveis de realizar a transição entre qualquer sistema operacional, plataforma de hardware ou linguagem de programação, assim como a WEB é.
 		
-		Ao contrário dos sistemas distribuidos existentes, os Web Services são adaptados para a Web. A maioria das tecnologias de computação distribuida incluem os protocolos de comunicação em seu escopo. Com Web Services os protocolos de comunicação já estão prontos e disponíveis por toda a Web. 
+		Ao contrário dos sistemas distribuídos existentes, os Web Services são adaptados para a Web. A maioria das tecnologias de computação distribuída incluem os protocolos de comunicação em seu escopo. Com Web Services os protocolos de comunicação já estão prontos e disponíveis por toda a Web. 
 		
 		Esta tecnologia pode ser usada de várias maneiras. Web Services podem ser executados em clientes de desktop e portáteis para acessar aplicações de Internet, tais como sistemas de reservas e sistemas de controle de pedidos. Web Services também podem ser usados para integração business-to-business (B2B), conectando aplicativos executados por diversas organizações na mesma cadeia de fornecimento. Web Services podem também resolver um dos problema mais amplo de integração de aplicações empresariais (IAE), conectando múltiplas aplicações de uma única organização a vários outros aplicativos, tanto dentro como fora do firewall. Em todos estes casos, as tecnologias de Web Services fornecem o padrão que liga diversas peças de software.
 		
 		\cite{UNDERWEBSERVICES}
 
 	\subsection{O que são?}
-		Web Services é um método de comunicação entre dispositivos computacionais distribuidos pela World Wide Web(WEB), um web services pode converter sua aplicação em uma aplicação web que podera publicar suas funções ou mensagens para o restante da WEB, sua arquitetura consiste em oferecer arquivos XML contendo as informações requisitadas por seus clientes, de acordo com sua game de conteudos disponíveis.\cite{WEBS}
+		Web Services é um método de comunicação entre dispositivos computacionais distribuídos pela World Wide Web(WEB), um web services pode converter sua aplicação em uma aplicação web que poderá publicar suas funções ou mensagens para o restante da WEB, sua arquitetura consiste em oferecer arquivos XML contendo as informações requisitadas por seus clientes, de acordo com sua game de conteúdos disponíveis.\cite{WEBS}
 		
 	
 	\subsection{Funcionamento}
 		
-\begin{figure}[h]
-			\begin{center}
-				 \includegraphics[width=200px]{HOME DA IAMAGEM}
-				 \caption{DESCRIÇÃO DA IMAGEM}
-				 \label{fig:AQUI O NOME DA IMAGEM}
-			\end{center}
-		\end{figure}
+		
 		
 \section{WSDL}
 	
@@ -137,7 +123,7 @@
 		
 	\subsection{Funcionamento}
 	
-		Para descrever um webservice é utilizado vocabulário em XML chamado Web Service Services Description Language conhecido como WSDL, que define como o webservice é acessado, quais as operações existem, como as mensagens são transferidas e a estrutura das mensagens. O WDSL não é obrigatório para trabalhar com webservices, ele faz uma parte integral do perfil do básico WS-I da organização \emph{OASIS Web Services Interoperability} \footnote{A Web Services Interoperability Organization (WS-I) é uma organização aberta com objetivo de estabelecer as melhores práticas para a interoperabilidade de web services, para grupos selecionados de padrões de web services, através de plataformas, sistemas operacionais e linguagens de programação.\cite{OASIS-WS-I-SITE}} e facilita o trabalho. 
+		Para descrever um webservice é utilizado vocabulário em XML chamado Web Service Description Language conhecido como WSDL, que define como o webservice é acessado, quais as operações existem, como as mensagens são transferidas e a estrutura das mensagens. O WDSL não é obrigatório para trabalhar com webservices, ele faz uma parte integral do perfil do básico WS-I da organização \emph{OASIS Web Services Interoperability} \footnote{A Web Services Interoperability Organization (WS-I) é uma organização aberta com objetivo de estabelecer as melhores práticas para a interoperabilidade de web services, para grupos selecionados de padrões de web services, através de plataformas, sistemas operacionais e linguagens de programação.\cite{OASIS-WS-I-SITE}} e facilita o trabalho. 
 		
 		
 \section{Implementação}
