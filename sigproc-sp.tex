@@ -121,8 +121,10 @@
 		
 \section{WSDL}
 	
-		WSDL blah blah blah
-	
+		O Web Services Description Languages (WSDL) foi desenvolvido pela IBM em conjunto com a Ariba e a Microsoft, o WSDL é uma linguagem baseada em XML que proporciona um modelo para descrição de Web services. O padrão define serviços como portas ou endpoints de redes. WSDL é usada normalmente em conjunto com o SOAP e esquemas em XML, para proporcionar o funcionamento de webservices através das redes. Uma aplicação que se conecta ao webserice para fazer uma requisição de serviço pode ler o WSDL para determinar quais funções estão disponíveis no web service. Tipos de dados especiais são incorporados ao arquivo WSDL em forma de um esquema XML. o cliente pode então usar o SOAP para chamar funções listadas no WSDL.
+		
+		Por padrão é habilitada uma especificação para separar a descrição da funcionalidade abstrata oferecida pelo web service dos detalhes concretos de uma descrição de serviço onde aquela funcionalidade é oferecida. Essa especificação define a linguagem para descrever a funcionalidade abstrata de um serviço bem como um framework para descrever os detalhes concretos da descrição de um serviço. A definição abstrata das portas e mensagens são separadas dos seus usos concretos, habilitando o reuso dessas definições. Uma porta é definida associando um endereço de rede com uma ligação reutilizável e uma coleção de portas definem um serviço. As mensagens são descrições abstratas dos dados sendo trocados e tipos de portas são coleções abstratas de operações suportadas. O protocolo concreto e especificações dos formatos dos dados para um tipo de porta em particular constituem uma ligação reutilizável onde as mensagens e as operações são então ligadas a um protocolo de rede e um formato de mensagem concretos.
+		
 \section{SOAP}
 
 	\subsection{O que é?}
