@@ -106,7 +106,7 @@
 	
 		\subsubsection{O que é?}
 	
-			Simple Object Access Protocol ou procotolo simples de acesso a objetos, conhecido como SOAP, é um protocolo de webservices que utiliza o formato XML para troca de mensagens. O padrão do protocolo SOAP é reconhecido pela W3C desde 2003 em sua versão 1.2. Inicialmente tendo a empresa de tecnologia Microsoft como seu maior apoiador, no entanto é governado pela W3C atualmente.
+			Simple Object Access Protocol ou protocolo simples de acesso a objetos, conhecido como SOAP, é um protocolo de webservices que utiliza o formato XML para troca de mensagens. O padrão do protocolo SOAP é reconhecido pela W3C desde 2003 em sua versão 1.2. Inicialmente tendo a empresa de tecnologia Microsoft como seu maior apoiador, no entanto é governado pela W3C atualmente.
 		
 			O SOAP é orientado a métodos, estes métodos podem ter ou não parâmetros, portanto é necessário o conhecimento da assinatura dos métodos. A execução dos métodos é realizada no servidor.
 		
@@ -193,7 +193,7 @@
 	
 	\lstinputlisting[language=PHP,caption={Criação de Web Services},label={listing:CriacaoWebServices}]{start_web_services_server.php}
 	
-	Para quem for usar o web services sabia as operações que possam ser realizadas, utilizamos o WSDL para descrever os serviço da API em detalhes. Foi utilizada a classe Zend\_Soap\_AutoDiscover que permite detectar automaticamente e realizar o mapeamento do da classe de serviço. Na listing \ref{listing:GeracaoWSDL}, verificamos se existe algum pedido de WSDL por parametro GET, caso exista ocorre a instanciação da classe AutoDiscover que faz a leitura da classe de modelo por meio de \emph{reflection} e gera o mapeamento WSDL.
+	Para quem for usar o web services sabia as operações que possam ser realizadas, utilizamos o WSDL para descrever os serviço da API em detalhes. Foi utilizada a classe Zend\_Soap\_AutoDiscover que permite detectar automaticamente e realizar o mapeamento do da classe de serviço. Na listing \ref{listing:GeracaoWSDL}, verificamos se existe algum pedido de WSDL por parâmetro GET, caso exista ocorre a instanciação da classe AutoDiscover que faz a leitura da classe de modelo por meio de \emph{reflection} e gera o mapeamento WSDL.
 	
 	\lstinputlisting[language=PHP,caption={Geração do WSDL},label={listing:GeracaoWSDL}]{web_services_wsdl.php}
 	
