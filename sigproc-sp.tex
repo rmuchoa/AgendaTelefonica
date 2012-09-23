@@ -249,13 +249,43 @@
 	\lstinputlisting[language=html,caption={Template SOAP},label={listing:TemplateSOAP}]{template_soap.html}
  
 \section{Como Utilizar}
+
+	\subsection{Requisitos}
 	
-	Para utilizar o sistema é necessário instalar algumas ferramentas as quais provêm suporte tecnológica para a mesma, estas são:
+	Para a execução da aplicação de demonstração, é necessário ter os seguintes requisitos cumpridos:
+	
+		\begin{itemize}
+			\item Servidor Web com PHP 5.4 ou superior
+			\item Eclipse IDE com plugin Android ADT
+			\item Android SDK level 10 ou superior
+		\end{itemize}
+	
+	Para a instalação do servidor web, é recomendado o projeto XAMPP que roda em sistemas Microsoft Windows, cujo link para download é: \url{ http://www.apachefriends.org/pt_br/xampp-windows.html}
+	
 	\emph{IDE Eclipse}, cujo link para download é: \url{http://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/junor}
 	\emph{ADT} do \emph{Android}, cujo link para o tutorial de instalação e download é: \url{http://developer.android.com/sdk/installing/installing-adt.html}
-	\emph{Xampp} para PHP 5.4, cujo link para download é: \url{ http://www.apachefriends.org/pt_br/xampp-windows.html}
+		
+	\subsection{Servidor}
 	
-	Código fonte do Web Services: \url{https://github.com/rmuchoa/AgendaTelefonica/downloads}
+		Para utilizar o servidor deve-se ter o servidor web instalado previamente e realizar o download do seguinte pacote e extrair na pasta htdocs do servidor, no caso do XAMPP localizado na C:\textbackslash xampp\textbackslash htdocs
+	
+		Código fonte do servidor: \url{https://github.com/rmuchoa/AgendaTelefonica/zipball/master}
+		
+		Logo em seguida, é necessário criar o banco de dados da aplicação servidor, navegue até o diretório da aplicação servidor e digite: 
+		
+			\emph{php script/setup-db.php}
+		
+		Após isto, o webservice poderá ser acessado pela url: \url{http://localhost/NomePastaProjeto/public/webservice.php?wsdl}
+	
+	\subsection{Cliente}
+	
+		Código fonte do cliente: \url{https://github.com/rmuchoa/AgendaTelefonica/zipball/android-app}
+	
+	Para utilizar o sistema é necessário instalar algumas ferramentas as quais provêm suporte tecnológica para a mesma, estas são:
+	
+	
+	
+	
 	
 	
 \section{Conclusão}
