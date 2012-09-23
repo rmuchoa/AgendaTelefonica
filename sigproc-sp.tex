@@ -218,7 +218,11 @@
 	
 	\emph{JQuery Mobile} fornece um sistema de interface unificado baseado em HTML5 para todas as populares plataformas.\cite{JQUERYMOBILESITE}
 	
+	Para realizar a comunição com web services, foi criada uma classe WebService como na listing \ref{listing:ClasseClienteWebservice}, esta classe trata de realizar uma conexão HTTP e mandar o XML por POST.
+	
 	\lstinputlisting[language=php,caption={Classe Cliente de Webservice},label={listing:ClasseClienteWebservice}]{classe_cliente.js}
+	
+	Na listing \ref{listing:TemplateSOAP}, temos os templates em xml das operações que serão realizadas. A primeira operação insere um contato no web service, onde temos a estrutura completa do SOAP envelope, cabeçalho e o corpo que contem a operação que estamos requisitando e os parametros.
 	
 	\lstinputlisting[language=html,caption={Template SOAP},label={listing:TemplateSOAP}]{template_soap.html}
  
@@ -233,7 +237,8 @@
 	
 	
 \section{Conclusão}
-	Então podemos concluir que... cri cri cri
+	
+	O web services nos forneceu a interoperabilidade entre os sistemas, a partir do web services foi possível a comunicação de duas aplicações de diferentes linguagens de programação sendo uma linguagem em PHP e outra em Javascript.
 
 
 %\end{document}  % This is where a 'short' article might terminate
