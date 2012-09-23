@@ -93,10 +93,9 @@
 		
 		Os elementos e atributos de um arquivo XML definem independentemente seus tipos e estruturas de informação para o tipo de dado que eles contém, incluindo a capacidade de modelar dados e estruturas especificas à um domínio de \emph{software}. (Um domínio de \emph{software} pode ser uma linguagem de programação, um \emph{middleware}, um pacote de aplicações, ou um sistema de gerenciamento de dados). A transformação de uma representação genérica de dados contida em um XML em aplicativo, ou domínio de \emph{software}. A representação específica de dados é o aspecto principal dos \emph{Web Services}.
 		
-		Os \emph{Web Services} utilizam esquemas em XML para a validação de mensagens. O SOAP do computador que esta enviando a mensagem transforma seus dados da forma nativa para o esquema XML pré-definido contido no arquivo WDSL para texto, pontos flutuantes, e outros, usando o mapeamento das tabelas. O Mapeamento das tabelas associa tipos de dados nativos com os tipos de dados correspondentes no XML. Padrões de mapeamento estão disponíveis para \emph{Java}, \emph{Visual Basic}, \emph{CORBA}, e outros tipos mais comuns de tipos de sistema. Muitas ferramentas XML estão disponíveis para definir mapeamentos customizados ou especiais. O computador que recebe o processo SOAP executa a transformação reversa, mapeando os tipos de dados do XML para os seus tipos de dados correspondentes.
 		
-		A sintaxe usada nas tecnologias de \emph{Web Services} especifica como os dados são genericamente representados, define como e com quais qualidades de serviço os dados são transmitidos, e detalha como o serviço é enviado e recebido. As implementações de \emph{Web Services} decodificam esses vários bits de XML para interagir com várias aplicações e domínios de software por baixo do serviço.\cite{UNDERWEBSERVICES}
 		
+
 		
 	\subsection{HTTP}
 		Em 1989, enquanto trabalhava no \emph{CERN}, Tim Berners-Lee teve a ideia que permitiria que os documentos na 
@@ -184,8 +183,10 @@
 					\label{fig:WebServiceFuncionamento}
 				\end{center}
 			\end{figure}
-			%JAH TEM NA !@#$ DO XML
-			O processador de SOAP do computador de envio transforma os dados de seu formato nativo, para os tipos de dados do schema XML predefinido, contidos no arquivo WSDL, para texto, ponto flutuante, e outros, utilizando para isso tabelas de mapeamento. As tabelas de mapeamento associam os tipos de dados nativos com os seus correspondentes tipos de dados do schema XML. (Padrão de mapeamento são amplamente disponíveis para Java, Visual Basic, CORBA e outros sistemas dos tipos comumente usados. Muitas ferramentas de mapeamento XML estão disponíveis para definir mapeamentos personalizados ou especiais.) O processador SOAP do computador receptor realiza a transformação em sentido inverso, mapeando do schema XML, os tipos de dados correspondentes aos tipos de dados nativos.
+			O SOAP do computador que esta enviando a mensagem transforma seus dados da forma nativa para o esquema XML pré-definido contido no arquivo WDSL para texto, pontos flutuantes, e outros, usando o mapeamento das tabelas. O Mapeamento das tabelas associa tipos de dados nativos com os tipos de dados correspondentes no XML. Padrões de mapeamento estão disponíveis para \emph{Java}, \emph{Visual Basic}, \emph{CORBA}, e outros tipos mais comuns de tipos de sistema. Muitas ferramentas XML estão disponíveis para definir mapeamentos customizados ou especiais. O computador que recebe o processo SOAP executa a transformação reversa, mapeando os tipos de dados do XML para os seus tipos de dados correspondentes.
+			
+			A sintaxe usada nas tecnologias de \emph{Web Services} especifica como os dados são genericamente representados, define como e com quais qualidades de serviço os dados são transmitidos, e detalha como o serviço é enviado e recebido. As implementações de \emph{Web Services} decodificam esses vários bits de XML para interagir com várias aplicações e domínios de software por baixo do serviço.\cite{UNDERWEBSERVICES}
+					
 			%REVER A !@#$ DA TRADUÇÃO, CREIO QUE JAH TEM ALGO PARECIDO NO XML, MUDAR REFERENCIA?
 			A URL, em uso generalizado na web, aponta para um endereço TCP (Transmission Control Protocol) que contém um recurso web, um Web Service schema contidos em arquivos acessíveis através da Internet  para download. Os Web Services disponíveis em um determinados endereços da Internet são identificados dentro de um arquivo público WDSL que pode ser baixado para o computador de envio e usado para gerar as mensagens. As Companhias também podem postar uma listagem no diretório público UDDI, apontando para o mesmo arquivo WSDL, para que clientes possam descobrir a empresa através do serviço UDDI. Em geral, quem quiser interagir com os Web Services deve encontrar uma maneira de obter e usar esse arquivo WSDL especial para gerar as mensagens.
 			%CADE AS REFERENCIAS DESSAS !@#$ TUDO?
