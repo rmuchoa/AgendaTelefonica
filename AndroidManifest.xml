@@ -4,8 +4,8 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="13"
-        android:targetSdkVersion="15" />
+        android:minSdkVersion="10"
+        android:targetSdkVersion="10" />
     
     <supports-screens 
     android:largeScreens="true" 
@@ -23,7 +23,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:configChanges="orientation|keyboardHidden"
             android:name=".MainActivity"
             android:label="@string/app_name" >
             <intent-filter>
