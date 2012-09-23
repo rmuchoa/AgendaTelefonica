@@ -1,0 +1,29 @@
+	<script id="soap-template-add-contact" type="application/soap-template">
+        <soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://localhost/AgendaTelefonicaPHPSOAP/public/webservice.php">
+            <soapenv:Header/>
+            <soapenv:Body>
+                <web:addContact soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+                    <name xsi:type="xsd:string">${name}</name>
+                    <phone xsi:type="xsd:string">${phone}</phone>
+                </web:addContact>
+            </soapenv:Body>
+        </soapenv:Envelope>
+    </script>
+    <script id="soap-template-get-contacts" type="application/soap-template">
+        <soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://localhost/AgendaTelefonicaPHPSOAP/public/webservice.php">
+            <soapenv:Header/>
+            <soapenv:Body>
+                <web:getContacts soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+            </soapenv:Body>
+        </soapenv:Envelope>
+    </script>
+    <script id="soap-template-remove-contact" type="application/soap-template">
+        <soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://localhost/AgendaTelefonicaPHPSOAP/public/webservice.php">
+            <soapenv:Header/>
+            <soapenv:Body>
+                <web:removeContact soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+                    <idContact xsi:type="xsd:int">${idContact}</idContact>
+                </web:removeContact>
+            </soapenv:Body>
+        </soapenv:Envelope>
+    </script>

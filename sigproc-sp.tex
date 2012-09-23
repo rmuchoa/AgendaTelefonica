@@ -63,10 +63,10 @@
 
 \maketitle
 \begin{abstract}
-		Esse artigo tem como objetivo mostrar uma visão geral sobre webservices, demonstrando o funcionamento de um web service criado em PHP utilizando o Zend Framework, para isso é dada uma explicação inicial de como funciona um web service, de sua arquitetura e principais características, em seguida é exibido um exemplo de um web service, o que é necessário ser feito para que o mesmo funcione corretamente.
+		Esse artigo tem como objetivo mostrar uma visão geral sobre webservices, demonstrando o funcionamento de um web services criado em PHP utilizando o Zend Framework e o protocolo SOAP, para isso é dada uma explicação inicial de como funciona um web services, de sua arquitetura e principais características, em seguida é exibido um exemplo de um web services, o que é necessário ser feito para que o mesmo funcione corretamente.
 		
 		
-		This article is intended to show an overview about webservices tecnologies, showing how stuff work a web service in PHP with Zend Framework, for that are given an initial explanation of how a web service works, the architeture and their main features, then is established a example of a web service, what must be done for it works properly.
+		This article is intended to show an overview about webservices tecnologies, showing how stuff works a SOAP web services in PHP with Zend Framework, for that are given an initial explanation of how web services works, the architeture and their main features, then is established a example of  web services, what must be done for it works properly.
 			
 \end{abstract}
 
@@ -99,14 +99,25 @@
 		
 		
 	\subsection{HTTP}
-		O Hypertext Transfer Protocol(HTTP) é um protocolo de nível de aplicação, utilizado em sistemas distribuídos, colaborativos e sistemas de informação multimídia. É um protocolo genérico, e não proprietário, pode ser usado para muitos objetivos, além do hipertexto, como domínios de servidores e gerenciamento de objetos de sistemas distribuídos, através da extensão de seus métodos de requisição, códigos de erro e cabeçalhos. Uma característica do HTTP é a escrita e negociação da representação de dados, habilitando os sistemas a fazer a construção dos dados a serem transferidos independentemente.\cite{HTTP-1.1}
+		Em 1989, enquanto trabalhava no CERN, Tim Berners-Lee teve a idéia que permitiria que os documentos na 
+		internet pudessem acessar um ao outro. Em termos básicos, um documento poderia conter links que
+		levassem a outros documentos, incluindo um texto especifico dentro dos documentos. A língua usada
+		para criar esses documentos era a Hipertext Markup Language(HTML). Em 1990, a internet nasceu com
+		o primeiro documento HTML na internet. O HTML é baseado no SGML com algumas funcionalidades adicionais, como os hiperlynks
+		e ancoras. Específicamente criado para a internet, o HTML apresentou um pequeno conjunto de tags que foram projetadas
+		para exibir conteudo, fazendo com que a adoção do HTML se espalhasse muito rapidamente.\cite{PRO_PHPXML}
+	
+		O HTTP é um protocolo de nível de aplicação, utilizado em sistemas distribuídos, colaborativos e sistemas de informação multimídia. É um protocolo genérico, e não proprietário, pode ser usado para muitos objetivos, além do hipertexto, como domínios de servidores e gerenciamento de objetos de sistemas distribuídos, através da extensão de seus métodos de requisição, códigos de erro e cabeçalhos. Uma característica do HTTP é a escrita e negociação da representação de dados, habilitando os sistemas a fazer a construção dos dados a serem transferidos independentemente.\cite{HTTP-1.1}
+	
+
+		
 		
 		
 	\subsection{SOAP}
 	
 		\subsubsection{O que é?}
 	
-			Simple Object Access Protocol ou procotolo simples de acesso a objetos, conhecido como SOAP, é um protocolo de webservices que utiliza o formato XML para troca de mensagens. O padrão do protocolo SOAP é reconhecido pela W3C desde 2003 em sua versão 1.2. Inicialmente tendo a empresa de tecnologia Microsoft como seu maior apoiador, no entanto é governado pela W3C atualmente.
+			Simple Object Access Protocol ou protocolo simples de acesso a objetos, conhecido como SOAP, é um protocolo de webservices que utiliza o formato XML para troca de mensagens. O padrão do protocolo SOAP é reconhecido pela W3C desde 2003 em sua versão 1.2. Inicialmente tendo a empresa de tecnologia Microsoft como seu maior apoiador, no entanto é governado pela W3C atualmente.
 		
 			O SOAP é orientado a métodos, estes métodos podem ter ou não parâmetros, portanto é necessário o conhecimento da assinatura dos métodos. A execução dos métodos é realizada no servidor.
 		
@@ -196,6 +207,7 @@
 		numberstyle=\tiny\color{gray},  % the style that is used for the line-numbers
      stepnumber=1       
 }
+
 	
 	Para a demostração da implementação de um web services, foi desenvolvida uma aplicação de agenda telefônica com servidor(web services) em linguagem de programação PHP junto ao \emph{Zend Framework} e no lado do cliente, uma aplicação android desenvolvida com \emph{PhoneGap} e framework javascript \emph{JQuery Mobile}.
 	
@@ -205,7 +217,7 @@
 	
 	\lstinputlisting[language=PHP,caption={Criação de Web Services},label={listing:CriacaoWebServices}]{start_web_services_server.php}
 	
-	Para quem for usar o web services sabia as operações que possam ser realizadas, utilizamos o WSDL para descrever os serviço da API em detalhes. Foi utilizada a classe Zend\_Soap\_AutoDiscover que permite detectar automaticamente e realizar o mapeamento do da classe de serviço. Na listing \ref{listing:GeracaoWSDL}, verificamos se existe algum pedido de WSDL por parametro GET, caso exista ocorre a instanciação da classe AutoDiscover que faz a leitura da classe de modelo por meio de \emph{reflection} e gera o mapeamento WSDL.
+	Para quem for usar o web services sabia as operações que possam ser realizadas, utilizamos o WSDL para descrever os serviço da API em detalhes. Foi utilizada a classe Zend\_Soap\_AutoDiscover que permite detectar automaticamente e realizar o mapeamento do da classe de serviço. Na listing \ref{listing:GeracaoWSDL}, verificamos se existe algum pedido de WSDL por parâmetro GET, caso exista ocorre a instanciação da classe AutoDiscover que faz a leitura da classe de modelo por meio de \emph{reflection} e gera o mapeamento WSDL.
 	
 	\lstinputlisting[language=PHP,caption={Geração do WSDL},label={listing:GeracaoWSDL}]{web_services_wsdl.php}
 	
@@ -218,9 +230,30 @@
 	No cliente, foi desenvolvida uma aplicação utilizando \emph{PhoneGap} e \emph{JQuery Mobile}. O PhoneGap permite o desenvolvimento de aplicações móveis para \emph{iOS, Android, Blackberry, Windows Phone, Palm WebOS, Bada} e \emph{Symbian} utilizando simplesmente: \emph{HTML, CSS} e \emph{Javascript}\cite{PHONEGAPSITE}.
 	
 	\emph{JQuery Mobile} fornece um sistema de interface unificado baseado em HTML5 para todas as populares plataformas.\cite{JQUERYMOBILESITE}
+	
+	Para realizar a comunição com web services, foi criada uma classe WebService como na listing \ref{listing:ClasseClienteWebservice}, esta classe trata de realizar uma conexão HTTP e mandar o XML por POST.
+	
+	\lstinputlisting[language=php,caption={Classe Cliente de Webservice},label={listing:ClasseClienteWebservice}]{classe_cliente.js}
+	
+	Na listing \ref{listing:TemplateSOAP}, temos os templates em xml das operações que serão realizadas. A primeira operação insere um contato no web service, onde temos a estrutura completa do SOAP envelope, cabeçalho e o corpo que contem a operação que estamos requisitando e os parametros.
+	
+	\lstinputlisting[language=html,caption={Template SOAP},label={listing:TemplateSOAP}]{template_soap.html}
 
+\section{Como Utilizar}
+	
+	Eclipse
+	\url{http://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/junor}  
+	
+	SDK do Android 
+	\url{http://developer.android.com/sdk/installing/installing-adt.html}
+	 
+	Xampp para PHP 5.4
+	\url{ http://www.apachefriends.org/pt_br/xampp-windows.html}
+	
+	
 \section{Conclusão}
-	Então podemos concluir que... cri cri cri
+	
+	O web services nos forneceu a interoperabilidade entre os sistemas, a partir do web services foi possível a comunicação de duas aplicações de diferentes linguagens de programação sendo uma linguagem em PHP e outra em Javascript.
 
 
 %\end{document}  % This is where a 'short' article might terminate
