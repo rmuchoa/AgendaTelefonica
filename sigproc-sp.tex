@@ -66,7 +66,7 @@
 		Esse artigo tem como objetivo mostrar uma visão geral sobre webservices, demonstrando o funcionamento de um web services criado em PHP utilizando o Zend Framework e o protocolo SOAP, para isso é dada uma explicação inicial de como funciona um web services, de sua arquitetura e principais características, em seguida é exibido um exemplo de um web services, o que é necessário ser feito para que o mesmo funcione corretamente.
 		
 		
-		This article is intended to show an overview about webservices tecnologies, showing how stuff works a SOAP web services in PHP with Zend Framework, for that are given an initial explanation of how a web services works, the architeture and their main features, then is established a example of  web services, what must be done for it works properly.
+		This article is intended to show an overview about webservices tecnologies, showing how stuff works a SOAP web services in PHP with Zend Framework, for that are given an initial explanation of how web services works, the architeture and their main features, then is established a example of  web services, what must be done for it works properly.
 			
 \end{abstract}
 
@@ -99,7 +99,18 @@
 		
 		
 	\subsection{HTTP}
-		O Hypertext Transfer Protocol(HTTP) é um protocolo de nível de aplicação, utilizado em sistemas distribuídos, colaborativos e sistemas de informação multimídia. É um protocolo genérico, e não proprietário, pode ser usado para muitos objetivos, além do hipertexto, como domínios de servidores e gerenciamento de objetos de sistemas distribuídos, através da extensão de seus métodos de requisição, códigos de erro e cabeçalhos. Uma característica do HTTP é a escrita e negociação da representação de dados, habilitando os sistemas a fazer a construção dos dados a serem transferidos independentemente.\cite{HTTP-1.1}
+		Em 1989, enquanto trabalhava no CERN, Tim Berners-Lee teve a idéia que permitiria que os documentos na 
+		internet pudessem acessar um ao outro. Em termos básicos, um documento poderia conter links que
+		levassem a outros documentos, incluindo um texto especifico dentro dos documentos. A língua usada
+		para criar esses documentos era a Hipertext Markup Language(HTML). Em 1990, a internet nasceu com
+		o primeiro documento HTML na internet. O HTML é baseado no SGML com algumas funcionalidades adicionais, como os hiperlynks
+		e ancoras. Específicamente criado para a internet, o HTML apresentou um pequeno conjunto de tags que foram projetadas
+		para exibir conteudo, fazendo com que a adoção do HTML se espalhasse muito rapidamente.\cite{PRO_PHPXML}
+	
+		O HTTP é um protocolo de nível de aplicação, utilizado em sistemas distribuídos, colaborativos e sistemas de informação multimídia. É um protocolo genérico, e não proprietário, pode ser usado para muitos objetivos, além do hipertexto, como domínios de servidores e gerenciamento de objetos de sistemas distribuídos, através da extensão de seus métodos de requisição, códigos de erro e cabeçalhos. Uma característica do HTTP é a escrita e negociação da representação de dados, habilitando os sistemas a fazer a construção dos dados a serem transferidos independentemente.\cite{HTTP-1.1}
+	
+
+		
 		
 		
 	\subsection{SOAP}
@@ -125,7 +136,7 @@
 		
 		
 	\subsection{SOA}
-		
+	
 		
 	\subsection{Webservices}
 		
@@ -215,6 +226,18 @@
 	
 	\lstinputlisting[language=html,caption={Template SOAP},label={listing:TemplateSOAP}]{template_soap.html}
 
+\section{Como Utilizar}
+	
+	Eclipse
+	\url{http://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/junor}  
+	
+	SDK do Android 
+	\url{http://developer.android.com/sdk/installing/installing-adt.html}
+	 
+	Xampp para PHP 5.4
+	\url{ http://www.apachefriends.org/pt_br/xampp-windows.html}
+	
+	
 \section{Conclusão}
 	
 	O web services nos forneceu a interoperabilidade entre os sistemas, a partir do web services foi possível a comunicação de duas aplicações de diferentes linguagens de programação sendo uma linguagem em PHP e outra em Javascript.
