@@ -14,7 +14,7 @@
 
 \begin{document}
 
-\title{Utilizando SOAP para construir Web Services}
+\title{Construindo Web Services Utilizando SOAP}
 %\titlenote{(Does NOT produce the permission block, copyright information nor page numbering). For use with ACM\_PROC\_ARTICLE-SP.CLS. Supported by ACM.}}
 %\subtitle{[Extended Abstract]
 %\titlenote{A full version of this paper is available as
@@ -136,7 +136,20 @@
 		
 		
 	\subsection{SOA}
-	
+		
+		São políticas, práticas e estruturas que permitem que funcionalidades de um aplicativo seja prestado e consumido como conjuntos de serviços publicados, que podem ser invocados, publicado e descoberto, e são abstraídos da implementação usando um único modelo com base em um padrões de interface.
+		
+		\cite{SOA-Microsoft}
+		
+		Um sistema distribuído é composto de diversos agentes de software, discretos que devem trabalhar em conjunto para executar algumas tarefas. Além disso, os agentes em um sistema distribuído não operam no mesmo ambiente de processamento, por isso eles devem se comunicar por pilhas de de protocolo de hardware/software em uma rede. Isto significa que as comunicações com um sistema distribuído são intrinsecamente menos rápidas e confiáveis do que aqueles que usam invocação direta de código e memória compartilhada. Isto tem importantes implicações arquitetônicas porque sistemas distribuídos exigem que os desenvolvedores (da infra-estrutura e aplicações) considerem a latência imprevisível do acesso remoto, e levem em conta as questões de concorrência e da possibilidade de fracasso parcial.
+		
+		Uma Arquitetura Orientada a Serviços (SOA) é uma forma de arquitetar sistemas distribuídos caracterizada pela granularidade, visão lógica, plataforma neutra, orientação a mensagens, orientação a descrição, orientação pela rede.
+		
+		\cite{SOA-W3C}
+		
+		Na verdade os serviços da Web não são um componente obrigatório de uma SOA, embora cada vez mais eles venham se tornar desta maneira. SOA é potencialmente muito mais amplo em seu escopo do que simplesmente definir a implementação do serviço, abordando a qualidade do serviço a partir da perspectiva do fornecedor e do consumidor. Você pode fazer um paralelo com a CBD e tecnologias de componentes. COM e componentes UML da embalando componentes de endereço a partir do ponto de vista tecnológico, mas CBD, ou mesmo Componentes Baseados em Engenharia de Software (CBSE), é a disciplina com que você garante que está criando componentes que estão alinhados com o negócio. Da mesma forma, os Web Service são puramente a implementação. SOA é a abordagem, não apenas o equivalente a serviço de um diagrama da embalagem do componente UML.
+		
+		\cite{SOA-Microsoft}
 		
 	\subsection{Webservices}
 		
@@ -156,7 +169,7 @@
 		
 			WebServices normalmente são implementados usando linguagens de programação projetados para interação com a Web, como Java Servlets ou Application Server Pages (ASPs) que exigem um programa de back-end.
 		
-			Como mostra a Figura 1.1 \ref{fig:WebServiceFuncionamento}, ao enviar um documento para um endereço de um Web Service, um programa usa um XML squema de um tipo específico como o WSDL, para transformar dados de sua fonte de entrada - um arquivo estruturado neste exemplo - para produzir uma instância de um documento XML no formato consistente com que o Web Sevice de destino espera, conforme descrito no mesmo arquivo WSDL. O arquivo WSDL é usado para definir a entrada e as transformações de dados de saída.
+			Como mostra a Figura 1.1 \ref{fig:WebServiceFuncionamento}, ao enviar um documento para um endereço de um Web Service, um programa usa um XML esquema de um tipo específico como o WSDL, para transformar dados de sua fonte de entrada - um arquivo estruturado neste exemplo - para produzir uma instância de um documento XML no formato consistente com que o Web Sevice de destino espera, conforme descrito no mesmo arquivo WSDL. O arquivo WSDL é usado para definir a entrada e as transformações de dados de saída.
 		
 			\begin{figure}[h]
 				\begin{center}
@@ -200,11 +213,13 @@
 	
 	\subsection{Aplicação Servidor}
 
-	Para a criação de um web service, utilizamos a classe do zend framework chamada Zend\_Soap\_Server que fornece toda funcionalidade de um web services no protocolo SOAP. Na listing \ref{listing:CriacaoWebServices}, temos a instanciação da classe e a configuração do web service, onde passamos um vetor com a versão do protocolo SOAP para 1.2, url do web service e codificação de caracteres. Logo em seguida é informada a url do WSDL e a classe que possui os serviços que serão disponibilizados. E finalmente o método \emph{handle()} para inicializar o web services.
+	Para o desenvolvimento de um web service, utilizamos uma classe do Zend Framework chamada Zend\_Soap\_Server que fornece toda funcionalidade de um web services no protocolo SOAP. 
+	
+	Na listing \ref{listing:CriacaoWebServices}, temos a instanciação da classe e a configuração do web service, onde passamos um vetor com a versão do protocolo SOAP para 1.2, url do web service e codificação de caracteres. Logo em seguida é informada a url do WSDL e a classe que possui os serviços que serão disponibilizados. E finalmente o método \emph{handle()} para inicializar o web services.
 	
 	\lstinputlisting[language=PHP,caption={Criação de Web Services},label={listing:CriacaoWebServices}]{start_web_services_server.php}
 	
-	Para quem for usar o web services sabia as operações que possam ser realizadas, utilizamos o WSDL para descrever os serviço da API em detalhes. Foi utilizada a classe Zend\_Soap\_AutoDiscover que permite detectar automaticamente e realizar o mapeamento do da classe de serviço. Na listing \ref{listing:GeracaoWSDL}, verificamos se existe algum pedido de WSDL por parâmetro GET, caso exista ocorre a instanciação da classe AutoDiscover que faz a leitura da classe de modelo por meio de \emph{reflection} e gera o mapeamento WSDL.
+	Para quem for usar o web services saiba as operações que possam ser realizadas, utilizamos o WSDL para descrever os serviço da API em detalhes. Foi utilizado um componente do \emph{Zend Framework}, a classe Zend\_Soap\_AutoDiscover que permite detectar automaticamente e realizar o mapeamento do da classe de serviço. Na listing \ref{listing:GeracaoWSDL}, verificamos se existe algum pedido de WSDL por parâmetro GET, caso exista ocorre a instanciação da classe AutoDiscover que faz a leitura da classe de modelo por meio de \emph{reflection} e gera o mapeamento WSDL.
 	
 	\lstinputlisting[language=PHP,caption={Geração do WSDL},label={listing:GeracaoWSDL}]{web_services_wsdl.php}
 	
@@ -218,24 +233,27 @@
 	
 	\emph{JQuery Mobile} fornece um sistema de interface unificado baseado em HTML5 para todas as populares plataformas.\cite{JQUERYMOBILESITE}
 	
+	Para realizar a comunição com web services, foi criada uma classe WebService como na listing \ref{listing:ClasseClienteWebservice}, esta classe trata de realizar uma conexão HTTP e mandar o XML por POST.
+	
 	\lstinputlisting[language=php,caption={Classe Cliente de Webservice},label={listing:ClasseClienteWebservice}]{classe_cliente.js}
 	
+	Na listing \ref{listing:TemplateSOAP}, temos os templates em xml das operações que serão realizadas. A primeira operação insere um contato no web service, onde temos a estrutura completa do SOAP envelope, cabeçalho e o corpo que contem a operação que estamos requisitando e os parametros.
+	
 	\lstinputlisting[language=html,caption={Template SOAP},label={listing:TemplateSOAP}]{template_soap.html}
-
+ 
 \section{Como Utilizar}
 	
-	Eclipse
-	\url{http://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/junor}  
+	Para utilizar o sistema é necessário instalar algumas ferramentas as quais provêm suporte tecnológica para a mesma, estas são:
+	IDE Eclipse, cujo link para download é: \url{http://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/junor}
+	ADT do Android, cujo link para o tutorial de instalação e download é: \url{http://developer.android.com/sdk/installing/installing-adt.html}
+	Xampp para PHP 5.4, cujo link para download é: \url{ http://www.apachefriends.org/pt_br/xampp-windows.html}
 	
-	SDK do Android 
-	\url{http://developer.android.com/sdk/installing/installing-adt.html}
-	 
-	Xampp para PHP 5.4
-	\url{ http://www.apachefriends.org/pt_br/xampp-windows.html}
+	Código fonte do Web Services: \url{https://github.com/rmuchoa/AgendaTelefonica/downloads}
 	
 	
 \section{Conclusão}
-	Então podemos concluir que... cri cri cri
+	
+	O web services nos forneceu a interoperabilidade entre os sistemas, a partir do web services foi possível a comunicação de duas aplicações de diferentes linguagens de programação sendo uma linguagem em PHP e outra em Javascript.
 
 
 %\end{document}  % This is where a 'short' article might terminate
