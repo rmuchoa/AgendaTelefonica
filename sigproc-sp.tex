@@ -64,6 +64,7 @@
 
 \maketitle
 \begin{abstract}
+
 		Esse artigo tem como objetivo mostrar uma visão geral sobre \emph{Web Services}, demonstrando o funcionamento de um \emph{Web Services} criado em PHP utilizando o \emph{Zend Framework} e o protocolo SOAP, para isso é dada uma explicação inicial de como funciona um \emph{Web Services}, de sua arquitetura e principais características, em seguida é exibido um exemplo de um \emph{Web Services}, o que é necessário ser feito para que o mesmo funcione corretamente.
 		
 		
@@ -82,23 +83,23 @@
 \keywords{Webservices, SOAP, XML} 
 
 \section{Introdução}
+
 		\emph{Web Services} trouxeram uma nova forma de construir Sistema Distribuídos, e com a \emph{Service Oriented Architeture} (SOA), uma nova filosofia de integrar sistemas e serviços. Mas para compreender como os \emph{Web Services} se comportam, é preciso dominar, antes de tudo, um pouco sobre o \emph{Service Oriented Architeture Protocol} (SOAP) que ele implementa, a tecnologia \emph{Extensible Markup Language} (XML) que é utilizada pelo protocolo para trafegar as mensagens entre os processos, e o próprio \emph{Hypertext Transfer Protocol} (HTTP) que é utilizado para encapsular o protocolo SOAP de comunicação durante as requisições cliente-servidor.
 		
 		
 \section{Base Tecnológica}
 		
 	\subsection{XML}
+	
 		XML é uma linguagem de marcação extensível, projetada para transportar, armazenar e processar dados. O XML representa um conjunto de especificações especificadas e relatadas pelo \emph{World Wide Web Consortium}(W3C) e outros. O XML possui um ancestral em comum com o \emph{Standard Generalized Markup Language}(SGML). Uma das características do SGML era a separação do formato do conteúdo. Se um documento foi produzido para o formato A4 ou carta, por exemplo, o formato era descrito independentemente do conteúdo do documento. O mesmo documento portanto pode ser enviado em vários formatos sem mudar seu conteúdo. O principio das linguagens de marcação são aplicadas para os \emph{Web Services} através da separação da instancia do documento, que contém os dados, e o esquema, que descreve a estrutura dos dados e os tipos, incluindo informações de semântica muito úteis para fazer o mapeamento do documento para várias linguagens de programação e sistemas de software.
 		
 		O XML é similar ao \emph{HyperText Markup Language}(HTML), contém elementos, atributos e valores. Bem feitos os documentos em XML podem ser exibidos em navegadores \emph{Web}, porém, esse aspecto do XML não é muito relevante para os \emph{Web Services}. O HTML contém um conjunto finito de elementos e atributos, porém o XML permite ser definido tantos conjuntos quanto necessários.
 		
 		Os elementos e atributos de um arquivo XML definem independentemente seus tipos e estruturas de informação para o tipo de dado que eles contém, incluindo a capacidade de modelar dados e estruturas especificas à um domínio de \emph{software}. (Um domínio de \emph{software} pode ser uma linguagem de programação, um \emph{middleware}, um pacote de aplicações, ou um sistema de gerenciamento de dados). A transformação de uma representação genérica de dados contida em um XML em aplicativo, ou domínio de \emph{software}. A representação específica de dados é o aspecto principal dos \emph{Web Services}.
 		
-		
-		
 
-		
 	\subsection{HTTP}
+	
 		Em 1989, enquanto trabalhava no \emph{CERN}, Tim Berners-Lee teve a ideia que permitiria que os documentos na 
 		internet pudessem acessar um ao outro. Em termos básicos, um documento poderia conter links que
 		levassem a outros documentos, incluindo um texto especifico dentro dos documentos. A língua usada
@@ -110,9 +111,6 @@
 		O HTTP é um protocolo de nível de aplicação, utilizado em sistemas distribuídos, colaborativos e sistemas de informação multimídia. É um protocolo genérico, e não proprietário, pode ser usado para muitos objetivos, além do hipertexto, como domínios de servidores e gerenciamento de objetos de sistemas distribuídos, através da extensão de seus métodos de requisição, códigos de erro e cabeçalhos. Uma característica do HTTP é a escrita e negociação da representação de dados, habilitando os sistemas a fazer a construção dos dados a serem transferidos independentemente.\cite{HTTP-1.1}
 	
 
-		
-		
-		
 	\subsection{SOAP}
 	
 		\subsubsection{O que é?}
@@ -169,6 +167,7 @@
 		Esta tecnologia pode ser usada de várias maneiras. \emph{Web Services} podem ser executados em clientes de \emph{desktop} e portáteis para acessar aplicações de Internet, tais como sistemas de reservas e sistemas de controle de pedidos. \emph{Web Services} também podem ser usados para integração \emph{business-to-business} (B2B), conectando aplicativos executados por diversas organizações na mesma cadeia de fornecimento. \emph{Web Services} podem também resolver um dos problema mais amplo de integração de aplicações empresariais (IAE), conectando múltiplas aplicações de uma única organização a vários outros aplicativos, tanto dentro como fora do \emph{firewall}. Em todos estes casos, as tecnologias de \emph{Web Services} fornecem o padrão que liga diversas peças de software.\cite{UNDERWEBSERVICES}
 		
 		\subsubsection{O que são?}
+		
 			\emph{Web Services} é um método de comunicação entre dispositivos computacionais distribuídos pela \emph{World Wide Web}(Web), um \emph{Web Services} pode converter sua aplicação em uma aplicação \emph{Web} que poderá publicar suas funções ou mensagens para o restante da WEB, sua arquitetura consiste em oferecer arquivos XML contendo as informações requisitadas por seus clientes, de acordo com sua game de conteúdos disponíveis.\cite{WEBS}
 		
 		\subsubsection{Funcionamento}
@@ -291,13 +290,9 @@
 		
 	
 \section{Conclusão}
-	
+
 	O \emph{Web Service} nos forneceu a interoperabilidade necessário entre sistemas distribuídos, a partir de suas operações oferecidas foi possível realizar a comunicação entre aplicações construídas em diferentes plataformas e linguagens de programação, como neste artigo, onde utilizamos uma aplicação em PHP e outra em \emph{Javascript}, sendo o servidor e o cliente, respectivamente. 
-	
-	
-
-%\end{document}  % This is where a 'short' article might terminate
-
+.
 %
 % The following two commands are all you need in the
 % initial runs of your .tex file to
