@@ -65,14 +65,14 @@
 \maketitle
 \begin{abstract}
 
-		Esse artigo tem como objetivo mostrar uma visão geral sobre \emph{Web Services}, demonstrando o funcionamento de um \emph{Web Services} criado em PHP utilizando o \emph{Zend Framework} e o protocolo SOAP, para isso é dada uma explicação inicial de como funciona um \emph{Web Services}, de sua arquitetura e principais características, em seguida é exibido um exemplo de um \emph{Web Services}, o que é necessário ser feito para que o mesmo funcione corretamente.
+%Esse artigo tem como objetivo mostrar uma visão geral sobre \emph{Web Services}, demonstrando o funcionamento de um \emph{Web Services} criado em PHP utilizando o %\emph{Zend Framework} e o protocolo SOAP, para isso é dada uma explicação inicial de como funciona um \emph{Web Services}, de sua arquitetura e principais %características, em seguida é exibido um exemplo de um \emph{Web Services}, o que é necessário ser feito para que o mesmo funcione corretamente.
 		
 		
-		\emph{This article is intended to show an overview about webservices tecnologies, showing how stuff works a SOAP Web services in PHP with Zend Framework, for that are given an initial explanation of how \emph{Web} services works, the architeture and their main features, then is established a example of  \emph{Web} services, what must be done for it works properly.}
+		\emph{This article is intended to show an overview about webservices tecnologies, showing how stuff works a SOAP Web Services in PHP with Zend Framework, for that are given an initial explanation of how \emph{Web} services works, the architeture and their main features, then is established a example of  \emph{Web} services, what must be done for it works properly.}
 			
 \end{abstract}
 
-\keywords{Webservices, SOAP, XML} 
+\keywords{Webservices, SOAP, XML, WSDL} 
 
 \section{Introdução}
 
@@ -99,18 +99,18 @@
 		e ancoras. Especificamente criado para a internet, o HTML apresentou um pequeno conjunto de tags que foram projetadas
 		para exibir conteúdo, fazendo com que a adoção do HTML se espalhasse muito rapidamente.\cite{PRO_PHPXML}
 	
-		O HTTP é um protocolo de nível de aplicação, utilizado em sistemas distribuídos, colaborativos e sistemas de informação multimídia. É um protocolo genérico, e não proprietário, pode ser usado para muitos objetivos, além do hipertexto, como domínios de servidores e gerenciamento de objetos de sistemas distribuídos, através da extensão de seus métodos de requisição, códigos de erro e cabeçalhos. Uma característica do HTTP é a escrita e negociação da representação de dados, habilitando os sistemas a fazer a construção dos dados a serem transferidos independentemente.\cite{HTTP-1.1}
+		O HTTP é um protocolo de nível de aplicação, utilizado em sistemas distribuídos, colaborativos e sistemas de informação multimídia. É um protocolo genérico, e não proprietário pode ser usado para muitos objetivos, além do hipertexto, como domínios de servidores e gerenciamento de objetos de sistemas distribuídos, através da extensão de seus métodos de requisição, códigos de erro e cabeçalhos. Uma característica do HTTP é a escrita e negociação da representação de dados, habilitando os sistemas a fazer a construção dos dados a serem transferidos independentemente.\cite{HTTP-1.1}
 	
 
 	\subsection{SOAP}
 	
 		\subsubsection{O que é?}
 	
-			\emph{Simple Object Access Protocol} ou protocolo simples de acesso a objetos, conhecido como SOAP, é um protocolo de \emph{Web Services} que utiliza o formato XML para troca de mensagens. O padrão do protocolo SOAP é reconhecido pela W3C desde 2003 em sua versão 1.2. Inicialmente tendo a empresa de tecnologia \emph{Microsoft} como seu maior apoiador, no entanto é governado pela W3C atualmente.
+			\emph{Simple Object Access Protocol} ou protocolo simples de acesso a objetos, conhecido como SOAP, é um protocolo de \emph{Web Service} que utiliza o formato XML para troca de mensagens. O padrão do protocolo SOAP é reconhecido pela W3C desde 2003 em sua versão 1.2. Inicialmente tendo a empresa de tecnologia \emph{Microsoft} como seu maior apoiador, no entanto é governado pela W3C atualmente.
 		
 			O SOAP é orientado a métodos, estes métodos podem ter ou não parâmetros, portanto é necessário o conhecimento da assinatura dos métodos. A execução dos métodos é realizada no servidor.
 		
-			Existem duas versão do SOAP: 1.1 e 1.2. Dentre as diferenças, pode-se mencionar que a versão 1.1 suporta apenas o HTTP com transporte de mensagens, enquanto a versão 1.2 permite a utilização de outros protocolos de transporte além do HTTP. \cite{WEBSERVICESZEND}
+			Existem duas versões do SOAP: 1.1 e 1.2. Dentre as diferenças, pode-se mencionar que a versão 1.1 suporta apenas o HTTP com transporte de mensagens, enquanto a versão 1.2 permite a utilização de outros protocolos de transporte além do HTTP. \cite{WEBSERVICESZEND}
 		
 		\subsubsection{Funcionamento}
 		
@@ -143,9 +143,10 @@
 		
 	\subsection{WSDL}
 		
-		O \emph{Web Services Description Languages} (WSDL) foi desenvolvido pela IBM em conjunto com a \emph{Ariba} e a \emph{Microsoft}, o WSDL é uma linguagem baseada em XML que proporciona um modelo para descrição de \emph{Web Services}. O padrão define serviços como portas ou \emph{endpoints }de redes. WSDL é usada normalmente em conjunto com o SOAP e esquemas em XML, para proporcionar o funcionamento de \emph{Web Services} através das redes. Uma aplicação que se conecta ao \emph{Web Services} para fazer uma requisição de serviço pode ler o WSDL para determinar quais funções estão disponíveis no \emph{Web Services}. Tipos de dados especiais são incorporados ao arquivo WSDL em forma de um esquema XML. O cliente pode então usar o SOAP para chamar funções listadas no WSDL.
+		O \emph{Web Service Description Languages} (WSDL) foi desenvolvido pela IBM em conjunto com a \emph{Ariba} e a \emph{Microsoft}, o WSDL é uma linguagem baseada em XML que proporciona um modelo para descrição de \emph{Web Services}. O padrão define serviços como portas ou \emph{endpoints }de redes. WSDL é usada normalmente em conjunto com o SOAP e esquemas em XML, para proporcionar o funcionamento de \emph{Web Services} através das redes. Uma aplicação que se conecta ao \emph{Web Service} para fazer uma requisição de serviço pode ler o WSDL para determinar quais funções estão disponíveis no \emph{Web Service}. Tipos de dados especiais são incorporados ao arquivo WSDL em forma de um esquema XML. O cliente pode então usar o SOAP para chamar funções listadas no WSDL.
 		
-		Por padrão é habilitada uma especificação para separar a descrição da funcionalidade abstrata oferecida pelo \emph{Web Services} dos detalhes concretos de uma descrição de serviço onde aquela funcionalidade é oferecida. Essa especificação define a linguagem para descrever a funcionalidade abstrata de um serviço bem como um \emph{textframework} para descrever os detalhes concretos da descrição de um serviço. A definição abstrata das portas e mensagens são separadas dos seus usos concretos, habilitando o reuso dessas definições. Uma porta é definida associando um endereço de rede com uma ligação reutilizável e uma coleção de portas definem um serviço. As mensagens são descrições abstratas dos dados sendo trocados e tipos de portas são coleções abstratas de operações suportadas. O protocolo concreto e especificações dos formatos dos dados para um tipo de porta em particular constituem uma ligação reutilizável onde as mensagens e as operações são então ligadas a um protocolo de rede e um formato de mensagem concretos. \cite{APACHE-AXIS}
+
+		Por padrão é habilitada uma especificação para separar a descrição da funcionalidade abstrata oferecida pelo \emph{Web Service} dos detalhes concretos de uma descrição de serviço onde aquela funcionalidade é oferecida. Essa especificação define a linguagem para descrever a funcionalidade abstrata de um serviço bem como um \emph{textframework} para descrever os detalhes concretos da descrição de um serviço. A definição abstrata das portas e mensagens são separadas dos seus usos concretos, habilitando o reuso dessas definições. Uma porta é definida associando um endereço de rede com uma ligação reutilizável e uma coleção de portas define um serviço. As mensagens são descrições abstratas dos dados sendo trocados e tipos de portas são coleções abstratas de operações suportadas. O protocolo concreto e especificações dos formatos dos dados para um tipo de porta em particular constituem uma ligação reutilizável onde as mensagens e as operações são então ligadas a um protocolo de rede e um formato de mensagem concreta. \cite{APACHE-AXIS}
 		
 		
 	\subsection{SOA}
@@ -160,7 +161,7 @@
 		
 	\subsection{Web Services}
 		
-		\emph{Web Services} são formas de utilizar XML para mapear programas, objetos ou banco de dados ou para funções de negócio abrangentes. Usando um documento XML criado na forma de uma mensagem, um programa envia uma requisição para um \emph{Web Services} através da rede, e eventualmente recebe uma resposta também na forma de um documento XML. Os padrões do \emph{Web Service} definem o formato das mensagens, especificam a interface para qual as mensagens são enviadas, descrevem as convenções para mapear os conteúdos das mensagens dentro e fora dos programas que implementam o serviço, e definem mecanismos para publicar e para descobrir interfaces de \emph{Web Services}.
+		\emph{Web Services} são formas de utilizar XML para mapear programas, objetos ou banco de dados ou para funções de negócio abrangentes. Usando um documento XML criado na forma de uma mensagem, um programa envia uma requisição para um \emph{Web Service} através da rede, e eventualmente recebe uma resposta também na forma de um documento XML. Os padrões do \emph{Web Service} definem o formato das mensagens, especificam a interface para qual as mensagens são enviadas, descrevem as convenções para mapear os conteúdos das mensagens dentro e fora dos programas que implementam o serviço, e definem mecanismos para publicar e para descobrir interfaces de \emph{Web Services}.
 		
 		\emph{Web Services} oferecem uma camada de abstração acima dos sistemas existentes, assim como Servidores de Aplicação, \emph{CORBA}, servidores \emph{.Net}, aplicativos mensageiros e pacotes de aplicação. \emph{Web Services} trabalham sobre 
 		uma camada de abstração similar a da Internet e são compatíveis de realizar a transição entre qualquer sistema operacional, plataforma de hardware ou linguagem de programação, assim como a WEB é.
@@ -171,7 +172,7 @@
 		
 		\subsubsection{O que são?}
 		
-			\emph{Web Services} é um método de comunicação entre dispositivos computacionais distribuídos pela \emph{World Wide Web}(Web), um \emph{Web Services} pode converter sua aplicação em uma aplicação \emph{Web} que poderá publicar suas funções ou mensagens para o restante da WEB, sua arquitetura consiste em oferecer arquivos XML contendo as informações requisitadas por seus clientes, de acordo com sua game de conteúdos disponíveis.\cite{WEBS}
+			\emph{Web Service} é um método de comunicação entre dispositivos computacionais distribuídos pela \emph{World Wide Web}(Web), um \emph{Web Service} pode converter sua aplicação em uma aplicação \emph{Web} que poderá publicar suas funções ou mensagens para o restante da WEB, sua arquitetura consiste em oferecer arquivos XML contendo as informações requisitadas por seus clientes, de acordo com sua game de conteúdos disponíveis.\cite{WEBS}
 		
 		\subsubsection{Funcionamento}
 		
@@ -189,7 +190,7 @@
 			
 			O SOAP do computador que esta enviando a mensagem transforma seus dados da forma nativa para o esquema XML pré-definido contido no arquivo WDSL para texto, pontos flutuantes, e outros, usando o mapeamento das tabelas. O Mapeamento das tabelas associa tipos de dados nativos com os tipos de dados correspondentes no XML. Padrões de mapeamento estão disponíveis para \emph{Java}, \emph{Visual Basic}, \emph{CORBA}, e outros tipos mais comuns de tipos de sistema. Muitas ferramentas XML estão disponíveis para definir mapeamentos customizados ou especiais. O computador que recebe o processo SOAP executa a transformação reversa, mapeando os tipos de dados do XML para os seus tipos de dados correspondentes.
 			
-			A sintaxe usada nas tecnologias de \emph{Web Services} especifica como os dados são genericamente representados, define como e com quais qualidades de serviço os dados são transmitidos, e detalha como o serviço é enviado e recebido. As implementações de \emph{Web Services} decodificam esses vários bits de XML para interagir com várias aplicações e domínios de software por baixo do serviço.
+			A sintaxe usada nas tecnologias de \emph{Web Services} especificas como os dados são genericamente representados, define como e com quais qualidades de serviço os dados são transmitidos, e detalha como o serviço é enviado e recebido. As implementações de \emph{Web Services} decodificam esses vários bits de XML para interagir com várias aplicações e domínios de software por baixo do serviço.
 					
 			
 			A URL é amplamente utilizada na \emph{Web}, ela aponta para um endereço de TCP(\emph{Transmission Control Protocol}) que contém um recurso \emph{Web}. Os esquemas de \emph{Web Services} são formulários de recursos \emph{Web}, eles se encontram em arquivos acessíveis pela internet e publicados na \emph{Web} utilizando o mesmo mecanismo utilizado para downloads de arquivos via HTML. A grande diferença entre fazer downloads via HTML e o acesso de recursos do Web Service, é que os \emph{Web Services} utilizam o XML ao invés de documentos HTML e dependem das tecnologias associadas, como os esquemas, transformações e a validação para poder suportar remotamente a comunicação entre aplicações clientes e servidor. Mas a forma em que os esquemas \emph{Web Services} são publicados e baixados é a mesma: uma operação HTTP em uma determinada URL.\cite{UNDERWEBSERVICES}
@@ -219,21 +220,21 @@
      stepnumber=1       
 }
 
-	Para a demostração da implementação de um \emph{Web Services}, foi desenvolvida uma aplicação de agenda telefônica com servidor(\emph{Web Services}) em linguagem de programação PHP junto ao \emph{Zend Framework} e uma aplicação cliente para o sistema \emph{Android} desenvolvida com \emph{PhoneGap} e \emph{framework javascript JQuery Mobile}.
+	Para a demonstração da implementação de um \emph{Web Service}, foi desenvolvida uma aplicação de agenda telefônica com servidor(\emph{Web Service}) em linguagem de programação PHP junto ao \emph{Zend Framework} e uma aplicação cliente para o sistema \emph{Android} desenvolvida com \emph{PhoneGap} e \emph{framework javascript JQuery Mobile}.
 	
 	\subsection{Aplicação Servidor}
 
-	Para o desenvolvimento de um \emph{Web Services}, utilizamos uma classe do \emph{Zend Framework} chamada Zend\_Soap\_Server que fornece toda funcionalidade de um \emph{Web Services} no protocolo SOAP. 
+	Para o desenvolvimento de um \emph{Web Service}, utilizamos uma classe do \emph{Zend Framework} chamada Zend\_Soap\_Server que fornece toda funcionalidade de um \emph{Web Service} no protocolo SOAP. 
 	
-	Na listing \ref{listing:CriacaoWebServices}, temos a instanciação da classe e a configuração do \emph{Web Services}, onde passamos um vetor com a versão do protocolo SOAP para 1.2, url do \emph{Web Services} e codificação de caracteres. Logo em seguida é informada a url do WSDL e a classe que possui os serviços que serão disponibilizados. E finalmente o método \emph{handle()} para inicializar o \emph{Web Services}.
+	Na listing \ref{listing:CriacaoWebServices}, temos a instanciação da classe e a configuração do \emph{Web Service}, onde passamos um vetor com a versão do protocolo SOAP para 1.2, url do \emph{Web Service} e codificação de caracteres. Logo em seguida é informada a url do WSDL e a classe que possui os serviços que serão disponibilizados. E finalmente o método \emph{handle()} para inicializar o \emph{Web Service}.
 	
 	\lstinputlisting[language=PHP,caption={Criação de Web Services},label={listing:CriacaoWebServices}]{start_web_services_server.php}
 	
-	Para quem for usar o \emph{Web Services} saiba as operações que possam ser realizadas, utilizamos o WSDL para descrever os serviço da API em detalhes. Foi utilizado um componente do \emph{Zend Framework}, a classe Zend\_Soap\_AutoDiscover que permite detectar automaticamente e realizar o mapeamento do da classe de serviço. Na listing \ref{listing:GeracaoWSDL}, verificamos se existe algum pedido de WSDL por parâmetro \emph{GET}, caso exista ocorre a instanciação da classe \emph{AutoDiscover} que faz a leitura da classe de modelo por meio de \emph{reflection} e gera o mapeamento WSDL.
+	Para quem for usar o \emph{Web Service} saiba as operações que possam ser realizadas, utilizamos o WSDL para descrever os serviço da API em detalhes. Foi utilizado um componente do \emph{Zend Framework}, a classe Zend\_Soap\_AutoDiscover que permite detectar automaticamente e realizar o mapeamento do da classe de serviço. Na listing \ref{listing:GeracaoWSDL}, verificamos se existe algum pedido de WSDL por parâmetro \emph{GET}, caso exista ocorre a instanciação da classe \emph{AutoDiscover} que faz a leitura da classe de modelo por meio de \emph{reflection} e gera o mapeamento WSDL.
 	
 	\lstinputlisting[language=PHP,caption={Geração do WSDL},label={listing:GeracaoWSDL}]{web_services_wsdl.php}
 	
-	Na classe de serviço, foi adicionado as operações disponíveis do \emph{Web Services} para adicionar, remover e listar os contatos da agenda telefônica como mostrado na listing \ref{listing:ClasseServicos}.
+	Na classe de serviço, foi adicionado as operações disponíveis do \emph{Web Service} para adicionar, remover e listar os contatos da agenda telefônica como mostrado na listing \ref{listing:ClasseServicos}.
 	
 	\lstinputlisting[language=PHP,caption={Classe de Serviços},label={listing:ClasseServicos}]{classe_servico.php}
 	
@@ -243,13 +244,15 @@
 	
 	\emph{JQuery Mobile} fornece um sistema de interface unificado baseado em HTML5 para todas as populares plataformas.\cite{JQUERYMOBILESITE}
 	
-	Para realizar a comunição com \emph{Web Services}, foi criada uma classe \emph{WebService} como na listing \ref{listing:ClasseClienteWebservice}, esta classe trata de realizar uma conexão HTTP e mandar o XML por \emph{POST}.
+
+	Para realizar a comunicação com \emph{Web Service}, foi criada uma classe \emph{WebService} como na listing \ref{listing:ClasseClienteWebservice}, esta classe trata de realizar uma conexão HTTP e mandar o XML por \emph{POST}.
+
 	
 	\lstinputlisting[language=php,caption={Classe Cliente de Webservice},label={listing:ClasseClienteWebservice}]{classe_cliente.js}
 	
-	Na listing \ref{listing:TemplateSOAP}, temos os \emph{templates} em xml das operações que serão realizadas. A primeira operação insere um contato no \emph{Web Services}, onde temos a estrutura completa do SOAP envelope, cabeçalho e o corpo que contem a operação que estamos requisitando e os parâmetros.
+	Na listing \ref{listing:TemplateSOAP}, temos os \emph{templates} em xml das operações que serão realizadas. A primeira operação insere um contato no \emph{Web Service}, onde temos a estrutura completa do SOAP envelope, cabeçalho e o corpo que contem a operação que estamos requisitando e os parâmetros.
 	
-	\lstinputlisting[language=html,caption={Template SOAP},label={listing:TemplateSOAP}]{template_soap.html}
+	\lstinputlisting[language=html,caption={Templates SOAP},label={listing:TemplateSOAP}]{template_soap.html}
  
 \section{Como Utilizar}
 
@@ -265,7 +268,7 @@
 	
 	Para a instalação do servidor web, é recomendado o projeto XAMPP que roda em sistemas Microsoft Windows, cujo link para download é: \url{ http://www.apachefriends.org/pt_br/xampp-windows.html}
 	
-	Para a utilização da aplicação web, é recomendado a instalação da \emph{IDE Eclipse}, cujo link para download é: \url{http://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/junor} e o plugin \emph{ADT} do \emph{Android} para o \emph{Eclipse}, cujo link para o tutorial de instalação e download é: \url{http://developer.android.com/sdk/installing/installing-adt.html}
+	Para a utilização da aplicação web, é recomendado a instalação da \emph{IDE Eclipse}, cujo link para download é: \url{http://www.eclipse.org/downloads/} e o plugin \emph{ADT} do \emph{Android} para o \emph{Eclipse}, cujo link para o tutorial de instalação e download é: \url{http://developer.android.com/sdk/installing/installing-adt.html}
 		
 	\subsection{Servidor}
 	
@@ -281,9 +284,9 @@
 	
 	\subsection{Cliente}
 	
-		Para acessar o web service com a aplicação cliente, é necessário ter instalado o \emph{Eclipse} com plugin ADT e o SDK Android Level 10 ou superior. Baixe uma cópia do cliente na URL: \url{https://github.com/rmuchoa/AgendaTelefonica/zipball/android-app}
+		Para acessar o \emph{Web Service} com a aplicação cliente, é necessário ter instalado o \emph{Eclipse} com plugin ADT e o \emph{SDK Android Level 10} ou superior. Baixe uma cópia do cliente na URL: \url{https://github.com/rmuchoa/AgendaTelefonica/zipball/android-app}
 
-		Abra o eclipse e crie uma maquina virtual do Android na aba Window > ADV(Android Virtual Device) Manager, clique em New e preencha o nome, tamanho do cartão de memória e crie a ADV então irá aparecer na lista no manager, clique em Start, aguarde carregar o emulador. Em seguida, em projetos do eclipse, clique com botão direto no projeto: Run as > Android Application. 
+		Abra o eclipse e crie uma maquina virtual do \emph{Android} na aba Window > ADV(Android Virtual Device) Manager, clique em \emph{New} e preencha o nome, tamanho do cartão de memória e crie a ADV então irá aparecer na lista no manager, clique em Start, aguarde carregar o emulador. Em seguida, em projetos do eclipse, clique com botão direto no projeto: Run as > Android Application. 
 		
 		A aplicação cliente irá iniciar e pedir a URL do web service, informe a url \url{http://localhost/NomePastaProjeto/public/webservice.php}, substitua de acordo com localização da pasta do projeto e clique em OK.
 	
@@ -291,7 +294,8 @@
 	
 \section{Conclusão}
 
-	O \emph{Web Service} nos forneceu a interoperabilidade necessário entre sistemas distribuídos, a partir de suas operações foi possível realizar a comunicação entre aplicações construídas em diferentes plataformas e linguagens de programação, como neste artigo, onde utilizamos uma aplicação em PHP e outra em \emph{Javascript}, sendo o servidor e o cliente, respectivamente. 
+	O \emph{Web Service} nos forneceu a interoperabilidade necessário entre sistemas distribuídos, a partir de suas operações foi possível realizar a comunicação entre
+	 aplicações construídas em diferentes plataformas e linguagens de programação, como neste artigo, onde utilizamos uma aplicação em PHP e outra em \emph{Javascript}, sendo o servidor e o cliente, respectivamente. 
 	
 	
  
