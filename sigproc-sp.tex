@@ -1,4 +1,4 @@
-\documentclass{acm_proc_article-sp}
+﻿\documentclass{acm_proc_article-sp}
 \usepackage[utf8]{inputenc}
 \usepackage{url}
 \usepackage{listings}
@@ -95,7 +95,7 @@
 		
 		O XML é similar ao \emph{HyperText Markup Language}(HTML), contém elementos, atributos e valores. Bem feitos os documentos em XML podem ser exibidos em navegadores \emph{Web}, porém, esse aspecto do XML não é muito relevante para os \emph{Web Services}. O HTML contém um conjunto finito de elementos e atributos, porém o XML permite ser definido tantos conjuntos quanto necessários.
 		
-		Os elementos e atributos de um arquivo XML definem independentemente seus tipos e estruturas de informação para o tipo de dado que eles contém, incluindo a capacidade de modelar dados e estruturas especificas à um domínio de \emph{software}. (Um domínio de \emph{software} pode ser uma linguagem de programação, um \emph{middleware}, um pacote de aplicações, ou um sistema de gerenciamento de dados). A transformação de uma representação genérica de dados contida em um XML em aplicativo, ou domínio de \emph{software}. A representação específica de dados é o aspecto principal dos \emph{Web Services}.
+		Os elementos e atributos de um arquivo XML definem independentemente seus tipos e estruturas de informação para o tipo de dado que eles contêm, incluindo a capacidade de modelar dados e estruturas especificas à um domínio de \emph{software}. (Um domínio de \emph{software} pode ser uma linguagem de programação, um \emph{middleware}, um pacote de aplicações, ou um sistema de gerenciamento de dados). A transformação de uma representação genérica de dados contida em um XML em aplicativo, ou domínio de \emph{software}. A representação específica de dados é o aspecto principal dos \emph{Web Services}.
 		
 
 	\subsection{HTTP}
@@ -108,7 +108,7 @@
 		e ancoras. Especificamente criado para a internet, o HTML apresentou um pequeno conjunto de tags que foram projetadas
 		para exibir conteúdo, fazendo com que a adoção do HTML se espalhasse muito rapidamente.\cite{PRO_PHPXML}
 	
-		O HTTP é um protocolo de nível de aplicação, utilizado em sistemas distribuídos, colaborativos e sistemas de informação multimídia. É um protocolo genérico, e não proprietário, pode ser usado para muitos objetivos, além do hipertexto, como domínios de servidores e gerenciamento de objetos de sistemas distribuídos, através da extensão de seus métodos de requisição, códigos de erro e cabeçalhos. Uma característica do HTTP é a escrita e negociação da representação de dados, habilitando os sistemas a fazer a construção dos dados a serem transferidos independentemente.\cite{HTTP-1.1}
+		O HTTP é um protocolo de nível de aplicação, utilizado em sistemas distribuídos, colaborativos e sistemas de informação multimídia. É um protocolo genérico, e não proprietário pode ser usado para muitos objetivos, além do hipertexto, como domínios de servidores e gerenciamento de objetos de sistemas distribuídos, através da extensão de seus métodos de requisição, códigos de erro e cabeçalhos. Uma característica do HTTP é a escrita e negociação da representação de dados, habilitando os sistemas a fazer a construção dos dados a serem transferidos independentemente.\cite{HTTP-1.1}
 	
 
 	\subsection{SOAP}
@@ -119,7 +119,7 @@
 		
 			O SOAP é orientado a métodos, estes métodos podem ter ou não parâmetros, portanto é necessário o conhecimento da assinatura dos métodos. A execução dos métodos é realizada no servidor.
 		
-			Existem duas versão do SOAP: 1.1 e 1.2. Dentre as diferenças, pode-se mencionar que a versão 1.1 suporta apenas o HTTP com transporte de mensagens, enquanto a versão 1.2 permite a utilização de outros protocolos de transporte além do HTTP. \cite{WEBSERVICESZEND}
+			Existem duas versões do SOAP: 1.1 e 1.2. Dentre as diferenças, pode-se mencionar que a versão 1.1 suporta apenas o HTTP com transporte de mensagens, enquanto a versão 1.2 permite a utilização de outros protocolos de transporte além do HTTP. \cite{WEBSERVICESZEND}
 		
 		\subsubsection{Funcionamento}
 		
@@ -136,18 +136,18 @@
 		
 		O \emph{Web Services Description Languages} (WSDL) foi desenvolvido pela IBM em conjunto com a \emph{Ariba} e a \emph{Microsoft}, o WSDL é uma linguagem baseada em XML que proporciona um modelo para descrição de \emph{Web Services}. O padrão define serviços como portas ou \emph{endpoints }de redes. WSDL é usada normalmente em conjunto com o SOAP e esquemas em XML, para proporcionar o funcionamento de \emph{Web Services} através das redes. Uma aplicação que se conecta ao \emph{Web Services} para fazer uma requisição de serviço pode ler o WSDL para determinar quais funções estão disponíveis no \emph{Web Services}. Tipos de dados especiais são incorporados ao arquivo WSDL em forma de um esquema XML. O cliente pode então usar o SOAP para chamar funções listadas no WSDL.
 		
-		Por padrão é habilitada uma especificação para separar a descrição da funcionalidade abstrata oferecida pelo \emph{Web Services} dos detalhes concretos de uma descrição de serviço onde aquela funcionalidade é oferecida. Essa especificação define a linguagem para descrever a funcionalidade abstrata de um serviço bem como um \emph{textframework} para descrever os detalhes concretos da descrição de um serviço. A definição abstrata das portas e mensagens são separadas dos seus usos concretos, habilitando o reuso dessas definições. Uma porta é definida associando um endereço de rede com uma ligação reutilizável e uma coleção de portas definem um serviço. As mensagens são descrições abstratas dos dados sendo trocados e tipos de portas são coleções abstratas de operações suportadas. O protocolo concreto e especificações dos formatos dos dados para um tipo de porta em particular constituem uma ligação reutilizável onde as mensagens e as operações são então ligadas a um protocolo de rede e um formato de mensagem concretos. \cite{APACHE-AXIS}
+		Por padrão é habilitada uma especificação para separar a descrição da funcionalidade abstrata oferecida pelo \emph{Web Services} dos detalhes concretos de uma descrição de serviço onde aquela funcionalidade é oferecida. Essa especificação define a linguagem para descrever a funcionalidade abstrata de um serviço bem como um \emph{textframework} para descrever os detalhes concretos da descrição de um serviço. A definição abstrata das portas e mensagens são separadas dos seus usos concretos, habilitando o reuso dessas definições. Uma porta é definida associando um endereço de rede com uma ligação reutilizável e uma coleção de portas define um serviço. As mensagens são descrições abstratas dos dados sendo trocados e tipos de portas são coleções abstratas de operações suportadas. O protocolo concreto e especificações dos formatos dos dados para um tipo de porta em particular constituem uma ligação reutilizável onde as mensagens e as operações são então ligadas a um protocolo de rede e um formato de mensagem concreta. \cite{APACHE-AXIS}
 		
 		
 	\subsection{SOA}
 		
-		São políticas, práticas e estruturas que permitem que funcionalidades de um aplicativo seja prestado e consumido como conjuntos de serviços publicados, que podem ser invocados, publicado e descoberto, e são abstraídos da implementação usando um único modelo com base em um padrões de interface.
+		São políticas, práticas e estruturas que permitem que funcionalidades de um aplicativo sejam prestadas e consumidas como conjuntos de serviços publicados, que podem ser invocados, publicado e descoberto, e são abstraídos da implementação usando um único modelo com base em um padrões de interface.
 		
 		\cite{SOA-Microsoft}
 		
 		Um sistema distribuído é composto de diversos agentes de software, discretos que devem trabalhar em conjunto para executar algumas tarefas. Além disso, os agentes em um sistema distribuído não operam no mesmo ambiente de processamento, por isso eles devem se comunicar por pilhas de de protocolo de hardware/software em uma rede. Isto significa que as comunicações com um sistema distribuído são intrinsecamente menos rápidas e confiáveis do que aqueles que usam invocação direta de código e memória compartilhada. Isto tem importantes implicações arquitetônicas porque sistemas distribuídos exigem que os desenvolvedores (da infra-estrutura e aplicações) considerem a latência imprevisível do acesso remoto, e levem em conta as questões de concorrência e da possibilidade de fracasso parcial.
 		
-		Uma Arquitetura Orientada a Serviços (SOA) é uma forma de arquitetar sistemas distribuídos caracterizada pela granularidade, visão lógica, plataforma neutra, orientação a mensagens, orientação a descrição, orientação pela rede.
+		Uma Arquitetura Orientada a Serviços (SOA) é uma forma de arquitetar sistemas distribuídos caracterizados pela granularidade, visão lógica, plataforma neutra, orientação a mensagens, orientação a descrição, orientação pela rede.
 		
 		\cite{SOA-W3C}
 		
@@ -219,7 +219,7 @@
 }
 
 	
-	Para a demostração da implementação de um \emph{Web Services}, foi desenvolvida uma aplicação de agenda telefônica com servidor(\emph{Web Services}) em linguagem de programação PHP junto ao \emph{Zend Framework} e uma aplicação cliente para o sistema \emph{Android} desenvolvida com \emph{PhoneGap} e \emph{framework javascript JQuery Mobile}.
+	Para a demonstração da implementação de um \emph{Web Services}, foi desenvolvida uma aplicação de agenda telefônica com servidor(\emph{Web Services}) em linguagem de programação PHP junto ao \emph{Zend Framework} e uma aplicação cliente para o sistema \emph{Android} desenvolvida com \emph{PhoneGap} e \emph{framework javascript JQuery Mobile}.
 	
 	\subsection{Aplicação Servidor}
 
@@ -243,7 +243,7 @@
 	
 	\emph{JQuery Mobile} fornece um sistema de interface unificado baseado em HTML5 para todas as populares plataformas.\cite{JQUERYMOBILESITE}
 	
-	Para realizar a comunição com \emph{Web Services}, foi criada uma classe \emph{WebService} como na listing \ref{listing:ClasseClienteWebservice}, esta classe trata de realizar uma conexão HTTP e mandar o XML por \emph{POST}.
+	Para realizar a comunicação com \emph{Web Services}, foi criada uma classe \emph{WebService} como na listing \ref{listing:ClasseClienteWebservice}, esta classe trata de realizar uma conexão HTTP e mandar o XML por \emph{POST}.
 	
 	\lstinputlisting[language=php,caption={Classe Cliente de Webservice},label={listing:ClasseClienteWebservice}]{classe_cliente.js}
 	
