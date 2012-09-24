@@ -71,20 +71,11 @@
 			
 \end{abstract}
 
-
-% A category with the (minimum) three required fields
-%\category{H.4}{Information Systems Applications}{Miscellaneous}
-%A category including the fourth, optional field follows...
-%\category{D.2.8}{Software Engineering}{Metrics}[complexity measures, performance measures]
-
-%\terms{Theory}
-
 \keywords{Webservices, SOAP, XML} 
 
 \section{Introdução}
 
 		\emph{Web Services} trouxeram uma nova forma de construir Sistema Distribuídos, e com a \emph{Service Oriented Architeture} (SOA), uma nova filosofia de integrar sistemas e serviços. Mas para compreender como os \emph{Web Services} se comportam, é preciso dominar, antes de tudo, um pouco sobre o \emph{Service Oriented Architeture Protocol} (SOAP) que ele implementa, a tecnologia \emph{Extensible Markup Language} (XML) que é utilizada pelo protocolo para trafegar as mensagens entre os processos, e o próprio \emph{Hypertext Transfer Protocol} (HTTP) que é utilizado para encapsular o protocolo SOAP de comunicação durante as requisições cliente-servidor.
-		
 		
 \section{Base Tecnológica}
 		
@@ -175,7 +166,6 @@
 			
 			Como visto na Figura \ref{fig:WebServiceFuncionamento}, para um programa submeter um documento para o \emph{Web Service} ele utiliza um esquema XML de um tipo específico, como o WSDL. Para transformar os dados de seu arquivo de origem nesse exemplo e produzir um documento XML no formato compatível com o que o \emph{Web Service} de destino espera, é descrito no mesmo arquivo WSDL. O arquivo WSDL é utilizado para definir a transformação dos dados de entrada e saída.
 			
-		
 			\begin{figure}[h]
 				\begin{center}
 					\includegraphics[width=250px]{WebServiceFuncionamento}
@@ -188,14 +178,11 @@
 			
 			A sintaxe usada nas tecnologias de \emph{Web Services} especifica como os dados são genericamente representados, define como e com quais qualidades de serviço os dados são transmitidos, e detalha como o serviço é enviado e recebido. As implementações de \emph{Web Services} decodificam esses vários bits de XML para interagir com várias aplicações e domínios de software por baixo do serviço.\cite{UNDERWEBSERVICES}
 					
-			
 			A URL é amplamente utilizada na \emph{Web}, ela aponta para um endereço de TCP(\emph{Transmission Control Protocol}) que contém um recurso \emph{Web}. Os esquemas de \emph{Web Services} são formulários de recursos \emph{Web}, eles se encontram em arquivos acessíveis pela internet e publicados na \emph{Web} utilizando o mesmo mecanismo utilizado para downloads de arquivos via HTML. A grande diferença entre fazer downloads via HTML e o acesso de recursos do Web Service é que os \emph{Web Services} utilizam o XML ao invés de documentos HTML e dependem das tecnologias associadas, como os esquemas, transformações e a validação para poder suportar remotamente a comunicação entre aplicações clientes e servidor. Mas a forma em que os esquemas \emph{Web Services} são publicados e baixados é a mesma: uma operação HTTP em uma determinada URL.
 			
 		
-		
 \section{Implementação}
 
-%Falar sobre a implementação do sistema, no caso falar como o Web services foi criado e afins
 \lstset{ 
 	language=php,               
 	breaklines=true,                
@@ -217,7 +204,6 @@
      stepnumber=1       
 }
 
-	
 	Para a demostração da implementação de um \emph{Web Services}, foi desenvolvida uma aplicação de agenda telefônica com servidor(\emph{Web Services}) em linguagem de programação PHP junto ao \emph{Zend Framework} e uma aplicação cliente para o sistema \emph{Android} desenvolvida com \emph{PhoneGap} e \emph{framework javascript JQuery Mobile}.
 	
 	\subsection{Aplicação Servidor}
@@ -292,68 +278,11 @@
 	
 \section{Conclusão}
 
-	O \emph{Web Service} nos forneceu a interoperabilidade necessário entre sistemas distribuídos, a partir de suas operações oferecidas foi possível realizar a comunicação entre aplicações construídas em diferentes plataformas e linguagens de programação, como neste artigo, onde utilizamos uma aplicação em PHP e outra em \emph{Javascript}, sendo o servidor e o cliente, respectivamente. 
-.
-%
-% The following two commands are all you need in the
-% initial runs of your .tex file to
-% produce the bibliography for the citations in your paper.
+	O \emph{Web Service} nos forneceu a interoperabilidade necessário entre sistemas distribuídos, a partir de suas operações foi possível realizar a comunicação entre aplicações construídas em diferentes plataformas e linguagens de programação, como neste artigo, onde utilizamos uma aplicação em PHP e outra em \emph{Javascript}, sendo o servidor e o cliente, respectivamente. 
+	
+	
+ 
 \bibliographystyle{abbrv}
 \bibliography{sigproc}  % sigproc.bib is the name of the Bibliography in this case
-% You must have a proper ".bib" file
-%  and remember to run:
-% latex bibtex latex latex
-% to resolve all references
-%
-% ACM needs 'a single self-contained file'!
-%
-%APPENDICES are optional
-%\balancecolumns
-%\appendix
-%Appendix A
-%\section{Headings in Appendices}
-%The rules about hierarchical headings discussed above for
-%the body of the article are different in the appendices.
-%In the \textbf{appendix} environment, the command
-%\textbf{section} is used to
-%indicate the start of each Appendix, with alphabetic order
-%designation (i.e. the first is A, the second B, etc.) and
-%a title (if you include one).  So, if you need
-%hierarchical structure
-%\textit{within} an Appendix, start with \textbf{subsection} as the
-%highest level. Here is an outline of the body of this
-%document in Appendix-appropriate form:
-%\subsection{Introduction}
-%\subsection{The Body of the Paper}
-%\subsubsection{Type Changes and  Special Characters}
-%\subsubsection{Math Equations}
-%\paragraph{Inline (In-text) Equations}
-%\paragraph{Display Equations}
-%\subsubsection{Citations}
-%\subsubsection{Tables}
-%\subsubsection{Figures}
-%\subsubsection{Theorem-like Constructs}
-%\subsubsection*{A Caveat for the \TeX\ Expert}
-%\subsection{Conclusions}
-%\subsection{Acknowledgments}
-%\subsection{Additional Authors}
-%This section is inserted by \LaTeX; you do not insert it.
-%You just add the names and information in the
-%\texttt{{\char'134}additionalauthors} command at the start
-%of the document.
-%\subsection{References}
-%Generated by bibtex from your ~.bib file.  Run latex,
-%then bibtex, then latex twice (to resolve references)
-%to create the ~.bbl file.  Insert that ~.bbl file into
-%the .tex source file and comment out
-%the command \texttt{{\char'134}thebibliography}.
-%% This next section command marks the start of
-%% Appendix B, and does not continue the present hierarchy
-%\section{More Help for the Hardy}
-%The acm\_proc\_article-sp document class file itself is chock-full of succinct
-%and helpful comments.  If you consider yourself a moderately
-%experienced to expert user of \LaTeX, you may find reading
-%it useful but please remember not to change it.
-%\balancecolumns
-%% That's all folks!
+
 \end{document}
