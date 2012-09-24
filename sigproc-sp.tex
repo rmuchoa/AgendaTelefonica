@@ -99,7 +99,7 @@
 		e ancoras. Especificamente criado para a internet, o HTML apresentou um pequeno conjunto de tags que foram projetadas
 		para exibir conteúdo, fazendo com que a adoção do HTML se espalhasse muito rapidamente.\cite{PRO_PHPXML}
 	
-		O HTTP é um protocolo de nível de aplicação, utilizado em sistemas distribuídos, colaborativos e sistemas de informação multimídia. É um protocolo genérico, e não proprietário, pode ser usado para muitos objetivos, além do hipertexto, como domínios de servidores e gerenciamento de objetos de sistemas distribuídos, através da extensão de seus métodos de requisição, códigos de erro e cabeçalhos. Uma característica do HTTP é a escrita e negociação da representação de dados, habilitando os sistemas a fazer a construção dos dados a serem transferidos independentemente.\cite{HTTP-1.1}
+		O HTTP é um protocolo de nível de aplicação, utilizado em sistemas distribuídos, colaborativos e sistemas de informação multimídia. É um protocolo genérico, e não proprietário pode ser usado para muitos objetivos, além do hipertexto, como domínios de servidores e gerenciamento de objetos de sistemas distribuídos, através da extensão de seus métodos de requisição, códigos de erro e cabeçalhos. Uma característica do HTTP é a escrita e negociação da representação de dados, habilitando os sistemas a fazer a construção dos dados a serem transferidos independentemente.\cite{HTTP-1.1}
 	
 
 	\subsection{SOAP}
@@ -110,11 +110,14 @@
 		
 			O SOAP é orientado a métodos, estes métodos podem ter ou não parâmetros, portanto é necessário o conhecimento da assinatura dos métodos. A execução dos métodos é realizada no servidor.
 		
-			Existem duas versão do SOAP: 1.1 e 1.2. Dentre as diferenças, pode-se mencionar que a versão 1.1 suporta apenas o HTTP com transporte de mensagens, enquanto a versão 1.2 permite a utilização de outros protocolos de transporte além do HTTP. \cite{WEBSERVICESZEND}
+			Existem duas versões do SOAP: 1.1 e 1.2. Dentre as diferenças, pode-se mencionar que a versão 1.1 suporta apenas o HTTP com transporte de mensagens, enquanto a versão 1.2 permite a utilização de outros protocolos de transporte além do HTTP. \cite{WEBSERVICESZEND}
 		
 		\subsubsection{Funcionamento}
 		
-			Para descrever um \emph{Web Service} é utilizado vocabulário em XML chamado \emph{Web Service Description Language} conhecido como WSDL, que define como o \emph{Web Service} é acessado, quais as operações existem, como as mensagens são transferidas e a estrutura das mensagens. O WDSL não é obrigatório para trabalhar com \emph{Web Services}, ele faz uma parte integral do perfil do básico WS-I da organização \emph{OASIS Web Services Interoperability} \footnote{A \emph{Web Services Interoperability Organization} (WS-I) é uma organização aberta com objetivo de estabelecer as melhores práticas para a interoperabilidade de \emph{Web Services}, para grupos selecionados de padrões de \emph{Web Services}, através de plataformas, sistemas operacionais e linguagens de programação.\cite{OASIS-WS-I-SITE}} e facilita o trabalho. 
+
+			Para descrever um \emph{Web Service} é utilizado vocabulário em XML chamado \emph{Web Service Description Language} conhecido como WSDL, que define como o \emph{Web Service} é acessado, quais as operações existem, como as mensagens são transferidas e a estrutura das mensagens. O WDSL não é obrigatório para trabalhar com \emph{Web Services}, ele faz uma parte integral do perfil do básico WS-I da organização \emph{OASIS Web Services Interoperability} \footnote{A \emph{Web Services Interoperability Organization} (WS-I) é uma organização aberta com objetivo de estabelecer as melhores práticas para a interoperabilidade de \emph{Web Services}, para grupos selecionados de padrões de \emph{Web Services}, através de plataformas, sistemas operacionais e linguagens de programação.\cite{OASIS-WS-I-SITE}} e facilita o trabalho.
+			
+			Através do WSDL, podemos saber quais métodos e parâmetros devemos enviar na requisição em XML. A especificação SOAP define um framework de mensagens para troca de XML formatado pela Internet.
 			
 			%
 			%
@@ -127,7 +130,8 @@
 		
 		O \emph{Web Service Description Languages} (WSDL) foi desenvolvido pela IBM em conjunto com a \emph{Ariba} e a \emph{Microsoft}, o WSDL é uma linguagem baseada em XML que proporciona um modelo para descrição de \emph{Web Services}. O padrão define serviços como portas ou \emph{endpoints }de redes. WSDL é usada normalmente em conjunto com o SOAP e esquemas em XML, para proporcionar o funcionamento de \emph{Web Services} através das redes. Uma aplicação que se conecta ao \emph{Web Service} para fazer uma requisição de serviço pode ler o WSDL para determinar quais funções estão disponíveis no \emph{Web Service}. Tipos de dados especiais são incorporados ao arquivo WSDL em forma de um esquema XML. O cliente pode então usar o SOAP para chamar funções listadas no WSDL.
 		
-		Por padrão é habilitada uma especificação para separar a descrição da funcionalidade abstrata oferecida pelo \emph{Web Service} dos detalhes concretos de uma descrição de serviço onde aquela funcionalidade é oferecida. Essa especificação define a linguagem para descrever a funcionalidade abstrata de um serviço bem como um \emph{textframework} para descrever os detalhes concretos da descrição de um serviço. A definição abstrata das portas e mensagens são separadas dos seus usos concretos, habilitando o reuso dessas definições. Uma porta é definida associando um endereço de rede com uma ligação reutilizável e uma coleção de portas definem um serviço. As mensagens são descrições abstratas dos dados sendo trocados e tipos de portas são coleções abstratas de operações suportadas. O protocolo concreto e especificações dos formatos dos dados para um tipo de porta em particular constituem uma ligação reutilizável onde as mensagens e as operações são então ligadas a um protocolo de rede e um formato de mensagem concretos. \cite{APACHE-AXIS}
+
+		Por padrão é habilitada uma especificação para separar a descrição da funcionalidade abstrata oferecida pelo \emph{Web Service} dos detalhes concretos de uma descrição de serviço onde aquela funcionalidade é oferecida. Essa especificação define a linguagem para descrever a funcionalidade abstrata de um serviço bem como um \emph{textframework} para descrever os detalhes concretos da descrição de um serviço. A definição abstrata das portas e mensagens são separadas dos seus usos concretos, habilitando o reuso dessas definições. Uma porta é definida associando um endereço de rede com uma ligação reutilizável e uma coleção de portas define um serviço. As mensagens são descrições abstratas dos dados sendo trocados e tipos de portas são coleções abstratas de operações suportadas. O protocolo concreto e especificações dos formatos dos dados para um tipo de porta em particular constituem uma ligação reutilizável onde as mensagens e as operações são então ligadas a um protocolo de rede e um formato de mensagem concreta. \cite{APACHE-AXIS}
 		
 		
 	\subsection{SOA}
@@ -201,7 +205,7 @@
      stepnumber=1       
 }
 
-	Para a demostração da implementação de um \emph{Web Service}, foi desenvolvida uma aplicação de agenda telefônica com servidor(\emph{Web Service}) em linguagem de programação PHP junto ao \emph{Zend Framework} e uma aplicação cliente para o sistema \emph{Android} desenvolvida com \emph{PhoneGap} e \emph{framework javascript JQuery Mobile}.
+	Para a demonstração da implementação de um \emph{Web Service}, foi desenvolvida uma aplicação de agenda telefônica com servidor(\emph{Web Service}) em linguagem de programação PHP junto ao \emph{Zend Framework} e uma aplicação cliente para o sistema \emph{Android} desenvolvida com \emph{PhoneGap} e \emph{framework javascript JQuery Mobile}.
 	
 	\subsection{Aplicação Servidor}
 
@@ -225,13 +229,15 @@
 	
 	\emph{JQuery Mobile} fornece um sistema de interface unificado baseado em HTML5 para todas as populares plataformas.\cite{JQUERYMOBILESITE}
 	
-	Para realizar a comunição com \emph{Web Service}, foi criada uma classe \emph{WebService} como na listing \ref{listing:ClasseClienteWebservice}, esta classe trata de realizar uma conexão HTTP e mandar o XML por \emph{POST}.
+
+	Para realizar a comunicação com \emph{Web Service}, foi criada uma classe \emph{WebService} como na listing \ref{listing:ClasseClienteWebservice}, esta classe trata de realizar uma conexão HTTP e mandar o XML por \emph{POST}.
+
 	
 	\lstinputlisting[language=php,caption={Classe Cliente de Webservice},label={listing:ClasseClienteWebservice}]{classe_cliente.js}
 	
 	Na listing \ref{listing:TemplateSOAP}, temos os \emph{templates} em xml das operações que serão realizadas. A primeira operação insere um contato no \emph{Web Service}, onde temos a estrutura completa do SOAP envelope, cabeçalho e o corpo que contem a operação que estamos requisitando e os parâmetros.
 	
-	\lstinputlisting[language=html,caption={Template SOAP},label={listing:TemplateSOAP}]{template_soap.html}
+	\lstinputlisting[language=html,caption={Templates SOAP},label={listing:TemplateSOAP}]{template_soap.html}
  
 \section{Como Utilizar}
 
@@ -247,7 +253,7 @@
 	
 	Para a instalação do servidor web, é recomendado o projeto XAMPP que roda em sistemas Microsoft Windows, cujo link para download é: \url{ http://www.apachefriends.org/pt_br/xampp-windows.html}
 	
-	Para a utilização da aplicação web, é recomendado a instalação da \emph{IDE Eclipse}, cujo link para download é: \url{http://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/junor} e o plugin \emph{ADT} do \emph{Android} para o \emph{Eclipse}, cujo link para o tutorial de instalação e download é: \url{http://developer.android.com/sdk/installing/installing-adt.html}
+	Para a utilização da aplicação web, é recomendado a instalação da \emph{IDE Eclipse}, cujo link para download é: \url{http://www.eclipse.org/downloads/} e o plugin \emph{ADT} do \emph{Android} para o \emph{Eclipse}, cujo link para o tutorial de instalação e download é: \url{http://developer.android.com/sdk/installing/installing-adt.html}
 		
 	\subsection{Servidor}
 	
