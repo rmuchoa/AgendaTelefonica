@@ -5,6 +5,7 @@
 \usepackage{color}
 \usepackage{graphicx}
 \graphicspath{{./imagens/}}
+
  
 \definecolor{dkgreen}{rgb}{0,0.6,0}
 \definecolor{gray}{rgb}{0.5,0.5,0.5}
@@ -250,8 +251,7 @@
 	
 	Para a instalação do servidor web, é recomendado o projeto XAMPP que roda em sistemas Microsoft Windows, cujo link para download é: \url{ http://www.apachefriends.org/pt_br/xampp-windows.html}
 	
-	\emph{IDE Eclipse}, cujo link para download é: \url{http://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/junor}
-	\emph{ADT} do \emph{Android}, cujo link para o tutorial de instalação e download é: \url{http://developer.android.com/sdk/installing/installing-adt.html}
+	Para a utilização da aplicação web, é recomendado a instalação da \emph{IDE Eclipse}, cujo link para download é: \url{http://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/junor} e o plugin \emph{ADT} do \emph{Android} para o \emph{Eclipse}, cujo link para o tutorial de instalação e download é: \url{http://developer.android.com/sdk/installing/installing-adt.html}
 		
 	\subsection{Servidor}
 	
@@ -263,18 +263,17 @@
 		
 			\emph{php script/setup-db.php}
 		
-		Após isto, o webservice poderá ser acessado pela url: \url{http://localhost/NomePastaProjeto/public/webservice.php?wsdl}
+		Após isto, o webservice poderá ser acessado pela url: \url{http://localhost/NomePastaProjeto/public/webservice.php}
 	
 	\subsection{Cliente}
 	
-		Código fonte do cliente: \url{https://github.com/rmuchoa/AgendaTelefonica/zipball/android-app}
+		Para acessar o web service com a aplicação cliente, é necessário ter instalado o \emph{Eclipse} com plugin ADT e o SDK Android Level 10 ou superior. Baixe uma cópia do cliente na URL: \url{https://github.com/rmuchoa/AgendaTelefonica/zipball/android-app}
+
+		Abra o eclipse e crie uma maquina virtual do Android na aba Window > ADV(Android Virtual Device) Manager, clique em New e preencha o nome, tamanho do cartão de memória e crie a ADV então irá aparecer na lista no manager, clique em Start, aguarde carregar o emulador. Em seguida, em projetos do eclipse, clique com botão direto no projeto: Run as > Android Application. 
+		
+		A aplicação cliente irá iniciar e pedir a URL do web service, informe a url \url{http://localhost/NomePastaProjeto/public/webservice.php}, substitua de acordo com localização da pasta do projeto e clique em OK.
 	
-	Para utilizar o sistema é necessário instalar algumas ferramentas as quais provêm suporte tecnológica para a mesma, estas são:
-	
-	
-	
-	
-	
+		
 	
 \section{Conclusão}
 
