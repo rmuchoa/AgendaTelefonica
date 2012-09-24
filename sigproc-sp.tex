@@ -114,14 +114,32 @@
 		
 		\subsubsection{Funcionamento}
 		
-			Para descrever um \emph{Web Services} é utilizado vocabulário em XML chamado \emph{Web Service Description Language} conhecido como WSDL, que define como o \emph{Web Services} é acessado, quais as operações existem, como as mensagens são transferidas e a estrutura das mensagens. O WDSL não é obrigatório para trabalhar com \emph{Web Services}, ele faz uma parte integral do perfil do básico WS-I da organização \emph{OASIS Web Services Interoperability} \footnote{A \emph{Web Services Interoperability Organization} (WS-I) é uma organização aberta com objetivo de estabelecer as melhores práticas para a interoperabilidade de \emph{Web Services}, para grupos selecionados de padrões de \emph{Web Services}, através de plataformas, sistemas operacionais e linguagens de programação.\cite{OASIS-WS-I-SITE}} e facilita o trabalho. 
+			Uma aplicação cliente que faz uma requisição SOAP para um Web Service, monta uma mensagem SOAP encapsulada em uma requisição HTTP, e efetua uma chamada de serviço remoto. Qualquer mensagem SOAP contém um envelope, com os cabeçalhos se existirem, e um corpo de mensagem com as informação que serão trafegadas pela Web. Em uma requisição o conteúdo do corpo da mensagem referencia o serviço requisitado enviando os dados dos parâmetros, se houverem. Quando o Web Service terminar de realizar o serviço requisitado, retorna uma resposta, se houver, em um serviceResponse como conteúdo da mensagem, ou um SOAPFault se houver alguma exceção.
 			
-			%
-			%
-			% RENAN !!!!!!!!!!!! FAZER ESTRUTURA DO XML SOAP !!!!!!
-			%
-			%
-		
+			<?xml version="1.0" encoding="UTF-8"?>
+			<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
+				<S:Header/>
+				<S:Body>
+					<ns2:insert xmlns:ns2="http://service.com/">
+						<contact>Renan Uchôa</contact>
+						<phone>5584258652</phone>
+					</ns2:insert>
+				</S:Body>
+			</S:Envelope>
+			
+			O conteúdo da mensagem leva o nome do serviço requisitado, com o acréscimo de Response quando for mensagem de resposta. Os parametros da mensagem de requisição são circundados por tags XML com o nome do parâmetro.
+			
+			<?xml version="1.0" encoding="UTF-8"?>
+			<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
+				<S:Body>
+					<ns2:insertResponse xmlns:ns2="http://service.com/">
+						<return>Renan Uchôa inserted</return>
+					</ns2:insertResponse>
+				</S:Body>
+			</S:Envelope>
+			
+			O conteúdo da mensagem de retorno no entanto vem circundado por uma tag 'return', sendo que para arrays e listas, é encadeado um retorno para cada objeto retornado.
+			
 		
 	\subsection{WSDL}
 		
